@@ -6917,3 +6917,58 @@ main,
     }
 
 }
+/* =========================================================
+   OPTIMIZACIÓN DE RENDIMIENTO
+   NO QUITA EFECTOS
+========================================================= */
+
+#universeCanvas,
+#lightningCanvas {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.hero-logo-scene,
+.intro-logo-scene,
+.hero-logo,
+.intro-logo-wrap,
+.courses-art,
+.about-logo-area {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.brayan-logo {
+    image-rendering: auto;
+}
+
+.intro-bat,
+.edge-bat,
+.hero-logo,
+.courses-orbit,
+.hero-orbit,
+.intro-orbit {
+    will-change: transform, opacity;
+}
+
+
+/* En celular mantenemos todos los efectos,
+   pero ayudamos a la GPU */
+
+@media (max-width: 768px) {
+
+    .intro-red-cloud,
+    .nebula {
+        transform: translateZ(0);
+    }
+
+    .intro-logo-scene,
+    .hero-logo-scene {
+        perspective: 900px;
+    }
+
+    .brayan-logo {
+        transform: translateZ(0);
+    }
+
+}
