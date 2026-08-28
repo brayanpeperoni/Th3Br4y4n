@@ -9,7 +9,7 @@
 ========================================================= */
 
 const WHATSAPP_NUMBER =
-    "51999999999";
+    "51944137061";
 
 
 const WHATSAPP_MESSAGE =
@@ -43,15 +43,15 @@ const header =
     );
 
 
-const menuBtn =
-    document.getElementById(
-        "menuBtn"
-    );
-
-
 const nav =
     document.getElementById(
         "nav"
+    );
+
+
+const menuBtn =
+    document.getElementById(
+        "menuBtn"
     );
 
 
@@ -69,7 +69,7 @@ const topTools =
 
 
 /* =========================================================
-   RELOJ EN TIEMPO REAL
+   RELOJ
 ========================================================= */
 
 const liveClock =
@@ -80,7 +80,9 @@ const liveClock =
 
 function updateClock() {
 
-    if (!liveClock) {
+    if (
+        !liveClock
+    ) {
         return;
     }
 
@@ -136,7 +138,7 @@ setInterval(
 
 
 /* =========================================================
-   MENÚ
+   MENÚ MÓVIL
 ========================================================= */
 
 if (
@@ -219,9 +221,13 @@ document
 
 function handleScroll() {
 
+    const scroll =
+        window.scrollY;
+
+
     if (
-        window.scrollY >
-        30
+        scroll >
+        25
     ) {
 
         header
@@ -242,8 +248,8 @@ function handleScroll() {
 
 
     if (
-        window.scrollY >
-        550
+        scroll >
+        520
     ) {
 
         backTop
@@ -268,8 +274,8 @@ function handleScroll() {
     ) {
 
         if (
-            window.scrollY >
-            400
+            scroll >
+            360
         ) {
 
             topTools.style.opacity =
@@ -279,6 +285,15 @@ function handleScroll() {
             topTools.style.pointerEvents =
                 "none";
 
+
+            topTools.style.transform =
+                window.innerWidth <=
+                768
+
+                    ? "translateX(-50%) translateY(-8px)"
+
+                    : "translateY(-8px)";
+
         } else {
 
             topTools.style.opacity =
@@ -287,6 +302,15 @@ function handleScroll() {
 
             topTools.style.pointerEvents =
                 "auto";
+
+
+            topTools.style.transform =
+                window.innerWidth <=
+                768
+
+                    ? "translateX(-50%) translateY(0)"
+
+                    : "translateY(0)";
 
         }
 
@@ -309,7 +333,7 @@ handleScroll();
 
 
 /* =========================================================
-   VOLVER ARRIBA
+   BACK TOP
 ========================================================= */
 
 backTop
@@ -347,24 +371,24 @@ const typingMessages = [
 
     "Creo diseños gráficos profesionales",
 
-    "Elaboro documentos profesionales",
+    "Elaboro documentos personalizados",
 
-    "Creo páginas para negocios",
+    "Diseño páginas para negocios",
 
-    "Diseño experiencias para celular y PC",
+    "Diseño para celular y computadora",
 
-    "Transformo ideas en proyectos digitales",
+    "Creo soluciones digitales",
 
     "THE BRAYAN"
 
 ];
 
 
-let messageIndex =
+let typingMessageIndex =
     0;
 
 
-let characterIndex =
+let typingLetterIndex =
     0;
 
 
@@ -372,7 +396,7 @@ let deleting =
     false;
 
 
-function typeText() {
+function typingAnimation() {
 
     if (
         !typingText
@@ -381,9 +405,9 @@ function typeText() {
     }
 
 
-    const current =
+    const text =
         typingMessages[
-            messageIndex
+            typingMessageIndex
         ];
 
 
@@ -392,18 +416,18 @@ function typeText() {
     ) {
 
         typingText.textContent =
-            current.substring(
+            text.substring(
                 0,
-                characterIndex + 1
+                typingLetterIndex + 1
             );
 
 
-        characterIndex++;
+        typingLetterIndex++;
 
 
         if (
-            characterIndex ===
-            current.length
+            typingLetterIndex ===
+            text.length
         ) {
 
             deleting =
@@ -411,7 +435,7 @@ function typeText() {
 
 
             setTimeout(
-                typeText,
+                typingAnimation,
                 1500
             );
 
@@ -423,17 +447,17 @@ function typeText() {
     } else {
 
         typingText.textContent =
-            current.substring(
+            text.substring(
                 0,
-                characterIndex - 1
+                typingLetterIndex - 1
             );
 
 
-        characterIndex--;
+        typingLetterIndex--;
 
 
         if (
-            characterIndex ===
+            typingLetterIndex ===
             0
         ) {
 
@@ -441,9 +465,9 @@ function typeText() {
                 false;
 
 
-            messageIndex =
+            typingMessageIndex =
                 (
-                    messageIndex +
+                    typingMessageIndex +
                     1
                 )
                 %
@@ -456,7 +480,7 @@ function typeText() {
 
     setTimeout(
 
-        typeText,
+        typingAnimation,
 
         deleting
             ? 32
@@ -467,7 +491,7 @@ function typeText() {
 }
 
 
-typeText();
+typingAnimation();
 
 
 
@@ -478,40 +502,41 @@ typeText();
 const BAT_SVG =
 `
 <svg
-    viewBox="0 0 100 70"
+    viewBox="0 0 120 74"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
 >
     <path
         d="
-        M50 31
-        C43 23 35 19 27 19
-        C21 19 15 21 9 25
-        C15 28 18 32 19 37
-        C14 37 9 39 4 43
-        C12 44 18 47 22 52
-        C27 48 33 48 38 53
-        L44 60
-        L50 53
-        L56 60
-        L62 53
-        C67 48 73 48 78 52
-        C82 47 88 44 96 43
-        C91 39 86 37 81 37
-        C82 32 85 28 91 25
-        C85 21 79 19 73 19
-        C65 19 57 23 50 31
+        M60 32
+        C51 22 41 17 31 18
+        C23 19 16 22 7 27
+        C15 29 21 34 23 40
+        C17 39 10 42 2 47
+        C13 47 21 51 27 58
+        C34 51 41 51 48 57
+        L54 65
+        L60 57
+        L66 65
+        L72 57
+        C79 51 86 51 93 58
+        C99 51 107 47 118 47
+        C110 42 103 39 97 40
+        C99 34 105 29 113 27
+        C104 22 97 19 89 18
+        C79 17 69 22 60 32
         Z
         "
     />
 
     <path
         d="
-        M44 31
-        C45 25 47 22 50 20
-        C53 22 55 25 56 31
-        L54 48
-        L50 54
-        L46 48
+        M53 31
+        C54 24 57 20 60 18
+        C63 20 66 24 67 31
+        L65 50
+        L60 58
+        L55 50
         Z
         "
     />
@@ -542,8 +567,16 @@ function createIntroBats() {
     const amount =
         window.innerWidth <
         768
-            ? 15
-            : 28;
+            ? 17
+            : 34;
+
+
+    const screenW =
+        window.innerWidth;
+
+
+    const screenH =
+        window.innerHeight;
 
 
     for (
@@ -573,37 +606,52 @@ function createIntroBats() {
 
         const startX =
             fromLeft
-                ? -180 -
-                  Math.random() *
-                  250
 
-                : window.innerWidth +
-                  100 +
+                ? -200 -
                   Math.random() *
-                  250;
+                  350
+
+                : screenW +
+                  120 +
+                  Math.random() *
+                  350;
 
 
         const endX =
             fromLeft
-                ? window.innerWidth +
-                  200
 
-                : -300;
+                ? screenW +
+                  220 +
+                  Math.random() *
+                  250
+
+                : -300 -
+                  Math.random() *
+                  250;
 
 
         const startY =
             Math.random() *
-            window.innerHeight;
+            screenH;
 
 
         const endY =
-            startY +
-            (
-                Math.random() -
-                .5
-            )
-            *
-            420;
+            Math.max(
+                -100,
+
+                Math.min(
+                    screenH +
+                    100,
+
+                    startY +
+                    (
+                        Math.random() -
+                        .5
+                    )
+                    *
+                    480
+                )
+            );
 
 
         bat.style.setProperty(
@@ -611,9 +659,9 @@ function createIntroBats() {
             "--bat-size",
 
             `${
-                25 +
+                24 +
                 Math.random() *
-                65
+                74
             }px`
 
         );
@@ -626,7 +674,7 @@ function createIntroBats() {
             `${
                 2.8 +
                 Math.random() *
-                3.3
+                3.8
             }s`
 
         );
@@ -637,46 +685,46 @@ function createIntroBats() {
             "--bat-delay",
 
             `${
-                .2 +
+                .15 +
                 Math.random() *
-                4.8
+                5.6
             }s`
 
         );
 
 
         bat.style.setProperty(
-            "--start-x",
+            "--bat-start-x",
             `${startX}px`
         );
 
 
         bat.style.setProperty(
-            "--start-y",
+            "--bat-start-y",
             `${startY}px`
         );
 
 
         bat.style.setProperty(
-            "--end-x",
+            "--bat-end-x",
             `${endX}px`
         );
 
 
         bat.style.setProperty(
-            "--end-y",
+            "--bat-end-y",
             `${endY}px`
         );
 
 
         bat.style.setProperty(
 
-            "--start-r",
+            "--bat-start-r",
 
             `${
-                -20 +
+                -25 +
                 Math.random() *
-                40
+                50
             }deg`
 
         );
@@ -684,12 +732,12 @@ function createIntroBats() {
 
         bat.style.setProperty(
 
-            "--end-r",
+            "--bat-end-r",
 
             `${
-                -25 +
+                -30 +
                 Math.random() *
-                50
+                60
             }deg`
 
         );
@@ -709,7 +757,7 @@ createIntroBats();
 
 
 /* =========================================================
-   MURCIÉLAGOS EN LOS BORDES
+   MURCIÉLAGOS BORDES
 ========================================================= */
 
 const edgeBats =
@@ -731,7 +779,7 @@ function createEdgeBats() {
         window.innerWidth <
         768
             ? 9
-            : 18;
+            : 20;
 
 
     for (
@@ -777,23 +825,24 @@ function createEdgeBats() {
 
 
         if (
-            i %
-            2 ===
+            i % 2 ===
             0
         ) {
 
             bat.style.left =
                 `${
+                    -3 +
                     Math.random() *
-                    14
+                    12
                 }px`;
 
         } else {
 
             bat.style.right =
                 `${
+                    -3 +
                     Math.random() *
-                    14
+                    12
                 }px`;
 
         }
@@ -801,12 +850,12 @@ function createEdgeBats() {
 
         bat.style.setProperty(
 
-            "--duration",
+            "--bat-duration",
 
             `${
                 6 +
                 Math.random() *
-                8
+                9
             }s`
 
         );
@@ -814,12 +863,12 @@ function createEdgeBats() {
 
         bat.style.setProperty(
 
-            "--move-x",
+            "--bat-move-x",
 
             `${
-                -8 +
+                -9 +
                 Math.random() *
-                16
+                18
             }px`
 
         );
@@ -827,25 +876,25 @@ function createEdgeBats() {
 
         bat.style.setProperty(
 
-            "--move-y",
-
-            `${
-                -14 +
-                Math.random() *
-                28
-            }px`
-
-        );
-
-
-        bat.style.setProperty(
-
-            "--rotate",
+            "--bat-move-y",
 
             `${
                 -15 +
                 Math.random() *
                 30
+            }px`
+
+        );
+
+
+        bat.style.setProperty(
+
+            "--bat-rotation",
+
+            `${
+                -17 +
+                Math.random() *
+                34
             }deg`
 
         );
@@ -880,11 +929,34 @@ const introLogoScene =
     );
 
 
+const introRedFlash =
+    document.getElementById(
+        "introRedFlash"
+    );
+
+
+const introLoadingBar =
+    document.getElementById(
+        "introLoadingBar"
+    );
+
+
+const introPercent =
+    document.getElementById(
+        "introPercent"
+    );
+
+
 const introPieces =
     document.querySelectorAll(
         ".intro-piece"
     );
 
+
+
+/* =========================================================
+   INTRO 3D
+========================================================= */
 
 if (
     introScreen &&
@@ -906,8 +978,7 @@ if (
             const x =
                 (
                     event.clientX /
-                    window.innerWidth
-                    -
+                    window.innerWidth -
                     .5
                 );
 
@@ -915,16 +986,15 @@ if (
             const y =
                 (
                     event.clientY /
-                    window.innerHeight
-                    -
+                    window.innerHeight -
                     .5
                 );
 
 
             introLogoScene.style.transform =
                 `
-                rotateY(${x * 10}deg)
-                rotateX(${y * -8}deg)
+                    rotateY(${x * 11}deg)
+                    rotateX(${y * -9}deg)
                 `;
 
         }
@@ -933,7 +1003,148 @@ if (
 }
 
 
-function showPage() {
+
+/* =========================================================
+   LOADING INTRO
+========================================================= */
+
+let introProgress =
+    0;
+
+
+function updateIntroLoading() {
+
+    if (
+        !introLoadingBar ||
+        !introPercent
+    ) {
+        return;
+    }
+
+
+    const target =
+        Math.min(
+            100,
+            introProgress
+        );
+
+
+    introLoadingBar.style.width =
+        `${target}%`;
+
+
+    introPercent.textContent =
+        `${Math.floor(target)}%`;
+
+}
+
+
+const loadingInterval =
+    setInterval(
+        () => {
+
+            if (
+                introProgress <
+                30
+            ) {
+
+                introProgress +=
+                    1 +
+                    Math.random() *
+                    2.5;
+
+            } else if (
+                introProgress <
+                65
+            ) {
+
+                introProgress +=
+                    .7 +
+                    Math.random() *
+                    1.8;
+
+            } else if (
+                introProgress <
+                91
+            ) {
+
+                introProgress +=
+                    .4 +
+                    Math.random() *
+                    1.2;
+
+            } else {
+
+                introProgress +=
+                    .18 +
+                    Math.random() *
+                    .45;
+
+            }
+
+
+            if (
+                introProgress >=
+                100
+            ) {
+
+                introProgress =
+                    100;
+
+
+                clearInterval(
+                    loadingInterval
+                );
+
+            }
+
+
+            updateIntroLoading();
+
+        },
+        55
+    );
+
+
+
+/* =========================================================
+   FLASH ROJO
+========================================================= */
+
+function triggerRedFlash() {
+
+    if (
+        !introRedFlash
+    ) {
+        return;
+    }
+
+
+    introRedFlash
+        .classList
+        .remove(
+            "flash"
+        );
+
+
+    void introRedFlash.offsetWidth;
+
+
+    introRedFlash
+        .classList
+        .add(
+            "flash"
+        );
+
+}
+
+
+
+/* =========================================================
+   MOSTRAR PÁGINA
+========================================================= */
+
+function showMainPage() {
 
     document
         .body
@@ -960,7 +1171,7 @@ function showPage() {
 
                 },
                 index *
-                115
+                105
             );
 
         }
@@ -969,11 +1180,47 @@ function showPage() {
 }
 
 
-/* INTRO MÁS LENTA */
+
+/* INTRO MÁS ÉPICA Y LENTA */
 
 if (
     introScreen
 ) {
+
+    setTimeout(
+        triggerRedFlash,
+        700
+    );
+
+
+    setTimeout(
+        triggerRedFlash,
+        2200
+    );
+
+
+    setTimeout(
+        triggerRedFlash,
+        4200
+    );
+
+
+    setTimeout(
+        () => {
+
+            introProgress =
+                100;
+
+
+            updateIntroLoading();
+
+
+            triggerRedFlash();
+
+        },
+        6000
+    );
+
 
     setTimeout(
         () => {
@@ -985,14 +1232,14 @@ if (
                 );
 
         },
-        6000
+        6250
     );
 
 
     setTimeout(
         () => {
 
-            showPage();
+            showMainPage();
 
 
             introScreen
@@ -1002,7 +1249,7 @@ if (
                 );
 
         },
-        6750
+        7000
     );
 
 
@@ -1012,19 +1259,19 @@ if (
             introScreen.remove();
 
         },
-        7600
+        7900
     );
 
 } else {
 
-    showPage();
+    showMainPage();
 
 }
 
 
 
 /* =========================================================
-   RAYOS ROJOS
+   RAYOS ROJOS REALISTAS
 ========================================================= */
 
 const lightningCanvas =
@@ -1053,19 +1300,15 @@ if (
         0;
 
 
-    let bolts =
+    let dpr =
+        1;
+
+
+    const bolts =
         [];
 
 
     function resizeLightning() {
-
-        const dpr =
-            Math.min(
-                window.devicePixelRatio ||
-                1,
-                1.5
-            );
-
 
         lightningWidth =
             window.innerWidth;
@@ -1075,14 +1318,26 @@ if (
             window.innerHeight;
 
 
+        dpr =
+            Math.min(
+                window.devicePixelRatio ||
+                1,
+                1.75
+            );
+
+
         lightningCanvas.width =
-            lightningWidth *
-            dpr;
+            Math.floor(
+                lightningWidth *
+                dpr
+            );
 
 
         lightningCanvas.height =
-            lightningHeight *
-            dpr;
+            Math.floor(
+                lightningHeight *
+                dpr
+            );
 
 
         lightningCanvas.style.width =
@@ -1108,80 +1363,143 @@ if (
     resizeLightning();
 
 
-    function generateBoltPoints(
-        startX,
-        startY,
-        endX,
-        endY,
-        segments = 20
+
+    function midpointDisplacement(
+        x1,
+        y1,
+        x2,
+        y2,
+        displacement,
+        generations
     ) {
 
-        const points =
-            [];
+        let points = [
+
+            {
+                x: x1,
+                y: y1
+            },
+
+            {
+                x: x2,
+                y: y2
+            }
+
+        ];
+
+
+        let currentDisplacement =
+            displacement;
 
 
         for (
-            let i = 0;
-            i <= segments;
-            i++
+            let generation = 0;
+            generation < generations;
+            generation++
         ) {
 
-            const progress =
-                i /
-                segments;
+            const newPoints =
+                [];
 
 
-            let x =
-                startX +
-                (
-                    endX -
-                    startX
-                )
-                *
-                progress;
+            for (
+                let i = 0;
+                i < points.length - 1;
+                i++
+            ) {
+
+                const a =
+                    points[i];
 
 
-            let y =
-                startY +
-                (
-                    endY -
-                    startY
-                )
-                *
-                progress;
+                const b =
+                    points[i + 1];
 
 
-            const strength =
-                Math.sin(
-                    progress *
-                    Math.PI
-                )
-                *
-                60;
+                newPoints.push(
+                    a
+                );
 
 
-            x +=
-                (
-                    Math.random() -
-                    .5
-                )
-                *
-                strength;
+                const dx =
+                    b.x -
+                    a.x;
 
 
-            y +=
-                (
-                    Math.random() -
-                    .5
-                )
-                *
-                strength;
+                const dy =
+                    b.y -
+                    a.y;
 
 
-            points.push({
-                x,
-                y
-            });
+                const length =
+                    Math.hypot(
+                        dx,
+                        dy
+                    ) || 1;
+
+
+                const normalX =
+                    -dy /
+                    length;
+
+
+                const normalY =
+                    dx /
+                    length;
+
+
+                const offset =
+                    (
+                        Math.random() -
+                        .5
+                    )
+                    *
+                    currentDisplacement;
+
+
+                newPoints.push({
+
+                    x:
+                        (
+                            a.x +
+                            b.x
+                        )
+                        /
+                        2
+                        +
+                        normalX *
+                        offset,
+
+                    y:
+                        (
+                            a.y +
+                            b.y
+                        )
+                        /
+                        2
+                        +
+                        normalY *
+                        offset
+
+                });
+
+            }
+
+
+            newPoints.push(
+                points[
+                    points.length -
+                    1
+                ]
+            );
+
+
+            points =
+                newPoints;
+
+
+            currentDisplacement *=
+                .57;
 
         }
 
@@ -1191,55 +1509,283 @@ if (
     }
 
 
-    function createBolt(
+
+    function createBranch(
+        source,
+        direction,
+        distance
+    ) {
+
+        const endX =
+            source.x +
+            Math.cos(
+                direction
+            )
+            *
+            distance;
+
+
+        const endY =
+            source.y +
+            Math.sin(
+                direction
+            )
+            *
+            distance;
+
+
+        return midpointDisplacement(
+
+            source.x,
+            source.y,
+
+            endX,
+            endY,
+
+            distance *
+            .38,
+
+            4
+
+        );
+
+    }
+
+
+
+    function createLightning(
         startX,
         startY,
         endX,
-        endY
+        endY,
+        strength = 1
     ) {
 
+        const distance =
+            Math.hypot(
+                endX -
+                startX,
+
+                endY -
+                startY
+            );
+
+
         const points =
-            generateBoltPoints(
+            midpointDisplacement(
+
                 startX,
                 startY,
+
                 endX,
                 endY,
-                19 +
+
+                Math.max(
+                    70,
+                    distance *
+                    .20
+                ),
+
+                6
+
+            );
+
+
+        const branches =
+            [];
+
+
+        const branchCount =
+            2 +
+            Math.floor(
+                Math.random() *
+                4
+            );
+
+
+        for (
+            let i = 0;
+            i < branchCount;
+            i++
+        ) {
+
+            const index =
                 Math.floor(
+                    points.length *
+                    (
+                        .20 +
+                        Math.random() *
+                        .58
+                    )
+                );
+
+
+            const source =
+                points[
+                    Math.min(
+                        points.length -
+                        1,
+                        index
+                    )
+                ];
+
+
+            const angle =
+                Math.atan2(
+                    endY -
+                    startY,
+                    endX -
+                    startX
+                )
+                +
+                (
+                    Math.random() >
+                    .5
+                        ? 1
+                        : -1
+                )
+                *
+                (
+                    .35 +
                     Math.random() *
-                    8
+                    .7
+                );
+
+
+            const branchDistance =
+                45 +
+                Math.random() *
+                130;
+
+
+            branches.push(
+                createBranch(
+                    source,
+                    angle,
+                    branchDistance
                 )
             );
+
+        }
 
 
         bolts.push({
 
             points,
 
-            life:
-                0,
+            branches,
+
+            life: 0,
 
             maxLife:
-                8 +
+                9 +
                 Math.random() *
-                7,
+                8,
 
-            width:
-                .7 +
-                Math.random() *
-                1.4,
+            strength,
 
-            alpha:
-                .75 +
+            flicker:
                 Math.random() *
-                .25
+                Math.PI *
+                2
 
         });
 
     }
 
 
-    function randomBolt() {
+
+    function randomEdgePoint() {
+
+        const side =
+            Math.floor(
+                Math.random() *
+                4
+            );
+
+
+        if (
+            side ===
+            0
+        ) {
+
+            return {
+
+                x:
+                    Math.random() *
+                    lightningWidth,
+
+                y:
+                    -20
+
+            };
+
+        }
+
+
+        if (
+            side ===
+            1
+        ) {
+
+            return {
+
+                x:
+                    lightningWidth +
+                    20,
+
+                y:
+                    Math.random() *
+                    lightningHeight
+
+            };
+
+        }
+
+
+        if (
+            side ===
+            2
+        ) {
+
+            return {
+
+                x:
+                    Math.random() *
+                    lightningWidth,
+
+                y:
+                    lightningHeight +
+                    20
+
+            };
+
+        }
+
+
+        return {
+
+            x:
+                -20,
+
+            y:
+                Math.random() *
+                lightningHeight
+
+        };
+
+    }
+
+
+
+    function createRandomBolt(
+        strength =
+            1
+    ) {
+
+        const start =
+            randomEdgePoint();
+
 
         const centerX =
             lightningWidth /
@@ -1251,72 +1797,10 @@ if (
             2;
 
 
-        const side =
-            Math.floor(
-                Math.random() *
-                4
-            );
+        createLightning(
 
-
-        let x;
-        let y;
-
-
-        if (
-            side ===
-            0
-        ) {
-
-            x =
-                Math.random() *
-                lightningWidth;
-
-            y =
-                -20;
-
-        } else if (
-            side ===
-            1
-        ) {
-
-            x =
-                lightningWidth +
-                20;
-
-            y =
-                Math.random() *
-                lightningHeight;
-
-        } else if (
-            side ===
-            2
-        ) {
-
-            x =
-                Math.random() *
-                lightningWidth;
-
-            y =
-                lightningHeight +
-                20;
-
-        } else {
-
-            x =
-                -20;
-
-            y =
-                Math.random() *
-                lightningHeight;
-
-        }
-
-
-        createBolt(
-
-            x,
-
-            y,
+            start.x,
+            start.y,
 
             centerX +
             (
@@ -1324,7 +1808,8 @@ if (
                 .5
             )
             *
-            300,
+            lightningWidth *
+            .35,
 
             centerY +
             (
@@ -1332,11 +1817,194 @@ if (
                 .5
             )
             *
-            260
+            lightningHeight *
+            .34,
+
+            strength
 
         );
 
     }
+
+
+
+    function drawLightningPath(
+        points,
+        alpha,
+        strength,
+        branch =
+            false
+    ) {
+
+        if (
+            points.length <
+            2
+        ) {
+            return;
+        }
+
+
+        /* GRAN RESPLANDOR */
+
+        lightningCtx.beginPath();
+
+
+        lightningCtx.moveTo(
+            points[0].x,
+            points[0].y
+        );
+
+
+        for (
+            let i = 1;
+            i < points.length;
+            i++
+        ) {
+
+            lightningCtx.lineTo(
+                points[i].x,
+                points[i].y
+            );
+
+        }
+
+
+        lightningCtx.lineCap =
+            "round";
+
+
+        lightningCtx.lineJoin =
+            "round";
+
+
+        lightningCtx.strokeStyle =
+            `rgba(255,0,22,${alpha * .10})`;
+
+
+        lightningCtx.lineWidth =
+            (
+                branch
+                    ? 8
+                    : 18
+            )
+            *
+            strength;
+
+
+        lightningCtx.shadowBlur =
+            40;
+
+
+        lightningCtx.shadowColor =
+            "#ff001c";
+
+
+        lightningCtx.stroke();
+
+
+
+        /* RESPLANDOR MEDIO */
+
+        lightningCtx.beginPath();
+
+
+        lightningCtx.moveTo(
+            points[0].x,
+            points[0].y
+        );
+
+
+        for (
+            let i = 1;
+            i < points.length;
+            i++
+        ) {
+
+            lightningCtx.lineTo(
+                points[i].x,
+                points[i].y
+            );
+
+        }
+
+
+        lightningCtx.strokeStyle =
+            `rgba(255,0,30,${alpha * .33})`;
+
+
+        lightningCtx.lineWidth =
+            (
+                branch
+                    ? 3.2
+                    : 6.5
+            )
+            *
+            strength;
+
+
+        lightningCtx.shadowBlur =
+            22;
+
+
+        lightningCtx.shadowColor =
+            "#ff001d";
+
+
+        lightningCtx.stroke();
+
+
+
+        /* NÚCLEO */
+
+        lightningCtx.beginPath();
+
+
+        lightningCtx.moveTo(
+            points[0].x,
+            points[0].y
+        );
+
+
+        for (
+            let i = 1;
+            i < points.length;
+            i++
+        ) {
+
+            lightningCtx.lineTo(
+                points[i].x,
+                points[i].y
+            );
+
+        }
+
+
+        lightningCtx.strokeStyle =
+            `rgba(255,45,62,${alpha})`;
+
+
+        lightningCtx.lineWidth =
+            (
+                branch
+                    ? .65
+                    : 1.25
+            )
+            *
+            strength;
+
+
+        lightningCtx.shadowBlur =
+            8;
+
+
+        lightningCtx.shadowColor =
+            "#ff122d";
+
+
+        lightningCtx.stroke();
+
+    }
+
 
 
     function drawLightning() {
@@ -1370,110 +2038,62 @@ if (
             bolt.life++;
 
 
-            const alpha =
+            bolt.flicker +=
+                .7;
+
+
+            const life =
                 Math.max(
                     0,
                     1 -
                     bolt.life /
                     bolt.maxLife
-                )
-                *
-                bolt.alpha;
+                );
 
 
-            lightningCtx.beginPath();
+            const flicker =
+                .72 +
+                Math.random() *
+                .28;
 
 
-            lightningCtx.moveTo(
-                bolt.points[0].x,
-                bolt.points[0].y
+            const alpha =
+                life *
+                flicker;
+
+
+            drawLightningPath(
+
+                bolt.points,
+
+                alpha,
+
+                bolt.strength,
+
+                false
+
             );
 
 
-            for (
-                let j = 1;
-                j < bolt.points.length;
-                j++
-            ) {
+            bolt.branches.forEach(
+                branch => {
 
-                lightningCtx.lineTo(
+                    drawLightningPath(
 
-                    bolt.points[j].x,
+                        branch,
 
-                    bolt.points[j].y
+                        alpha *
+                        .55,
 
-                );
+                        bolt.strength *
+                        .75,
 
-            }
+                        true
 
+                    );
 
-            /* GLOW ROJO */
-
-            lightningCtx.strokeStyle =
-                `rgba(255,0,25,${alpha * .20})`;
-
-
-            lightningCtx.lineWidth =
-                bolt.width *
-                9;
-
-
-            lightningCtx.shadowBlur =
-                25;
-
-
-            lightningCtx.shadowColor =
-                "#ff001d";
-
-
-            lightningCtx.stroke();
-
-
-            /* CENTRO ROJO */
-
-            lightningCtx.beginPath();
-
-
-            lightningCtx.moveTo(
-                bolt.points[0].x,
-                bolt.points[0].y
+                }
             );
-
-
-            for (
-                let j = 1;
-                j < bolt.points.length;
-                j++
-            ) {
-
-                lightningCtx.lineTo(
-
-                    bolt.points[j].x,
-
-                    bolt.points[j].y
-
-                );
-
-            }
-
-
-            lightningCtx.strokeStyle =
-                `rgba(255,45,65,${alpha})`;
-
-
-            lightningCtx.lineWidth =
-                bolt.width;
-
-
-            lightningCtx.shadowBlur =
-                8;
-
-
-            lightningCtx.shadowColor =
-                "#ff1028";
-
-
-            lightningCtx.stroke();
 
 
             if (
@@ -1505,9 +2125,12 @@ if (
     drawLightning();
 
 
-    function burst(
+
+    function lightningBurst(
         amount,
-        delay
+        gap,
+        strength =
+            1
     ) {
 
         for (
@@ -1517,12 +2140,30 @@ if (
         ) {
 
             setTimeout(
+                () => {
 
-                randomBolt,
+                    createRandomBolt(
+                        strength *
+                        (
+                            .8 +
+                            Math.random() *
+                            .45
+                        )
+                    );
 
+
+                    if (
+                        Math.random() >
+                        .45
+                    ) {
+
+                        triggerRedFlash();
+
+                    }
+
+                },
                 i *
-                delay
-
+                gap
             );
 
         }
@@ -1530,35 +2171,71 @@ if (
     }
 
 
+
+    /* PRIMER IMPACTO */
+
     setTimeout(
         () => {
-            burst(4, 110);
+
+            lightningBurst(
+                5,
+                95,
+                .85
+            );
+
         },
-        500
+        450
     );
 
 
+
+    /* SEGUNDO IMPACTO */
+
     setTimeout(
         () => {
-            burst(6, 85);
+
+            lightningBurst(
+                7,
+                80,
+                1
+            );
+
         },
-        1900
+        1800
     );
 
 
+
+    /* TERCER IMPACTO */
+
     setTimeout(
         () => {
-            burst(5, 100);
+
+            lightningBurst(
+                6,
+                90,
+                1
+            );
+
         },
-        3700
+        3550
     );
 
 
+
+    /* FINAL MÁS FUERTE */
+
     setTimeout(
         () => {
-            burst(10, 55);
+
+            lightningBurst(
+                12,
+                50,
+                1.15
+            );
+
         },
-        5650
+        5850
     );
 
 
@@ -1626,8 +2303,8 @@ if (
 
             heroLogoScene.style.transform =
                 `
-                rotateY(${x * 12}deg)
-                rotateX(${y * -10}deg)
+                    rotateY(${x * 12}deg)
+                    rotateX(${y * -10}deg)
                 `;
 
         }
@@ -1640,8 +2317,8 @@ if (
 
             heroLogoScene.style.transform =
                 `
-                rotateX(0deg)
-                rotateY(0deg)
+                    rotateX(0deg)
+                    rotateY(0deg)
                 `;
 
         }
@@ -1693,11 +2370,13 @@ const revealObserver =
         },
 
         {
+
             threshold:
                 .08,
 
             rootMargin:
-                "0px 0px -25px 0px"
+                "0px 0px -20px 0px"
+
         }
 
     );
@@ -1731,7 +2410,7 @@ const navLinks =
     );
 
 
-function updateNavigation() {
+function updateActiveNavigation() {
 
     const scroll =
         window.scrollY;
@@ -1742,7 +2421,7 @@ function updateNavigation() {
 
             const top =
                 section.offsetTop -
-                170;
+                160;
 
 
             const bottom =
@@ -1787,7 +2466,7 @@ function updateNavigation() {
 
 window.addEventListener(
     "scroll",
-    updateNavigation,
+    updateActiveNavigation,
     {
         passive: true
     }
@@ -1835,37 +2514,64 @@ if (
         universeCanvas.getContext(
             "2d",
             {
-                alpha: false
+                alpha:
+                    false
             }
         );
 
 
-    let width = 0;
-
-    let height = 0;
-
-    let dpr = 1;
+    let width =
+        0;
 
 
-    let stars = [];
-
-    let dust = [];
-
-    let redParticles = [];
-
-    let shootingStars = [];
+    let height =
+        0;
 
 
-    let mouseX = 0;
-    let mouseY = 0;
+    let dpr =
+        1;
 
-    let smoothX = 0;
-    let smoothY = 0;
+
+    let stars =
+        [];
+
+
+    let dust =
+        [];
+
+
+    let redDust =
+        [];
+
+
+    let distantClouds =
+        [];
+
+
+    let shootingStars =
+        [];
+
+
+    let pointerX =
+        0;
+
+
+    let pointerY =
+        0;
+
+
+    let smoothX =
+        0;
+
+
+    let smoothY =
+        0;
 
 
     let nextShootingStar =
         performance.now() +
-        5000;
+        4500;
+
 
 
     function resizeUniverse() {
@@ -1918,25 +2624,33 @@ if (
         );
 
 
-        createStars();
+        generateStars();
 
-        createDust();
+        generateDust();
 
-        createRedParticles();
+        generateRedDust();
+
+        generateDistantClouds();
 
     }
 
 
-    function createStars() {
 
-        stars = [];
+    /* =====================================================
+       ESTRELLAS
+    ====================================================== */
+
+    function generateStars() {
+
+        stars =
+            [];
 
 
         let amount =
             Math.floor(
                 width *
                 height /
-                1800
+                1550
             );
 
 
@@ -1948,7 +2662,7 @@ if (
             amount =
                 Math.floor(
                     amount *
-                    .62
+                    .56
                 );
 
         }
@@ -1957,7 +2671,7 @@ if (
         amount =
             Math.min(
                 amount,
-                1050
+                1200
             );
 
 
@@ -1967,7 +2681,7 @@ if (
             i++
         ) {
 
-            const random =
+            const randomColor =
                 Math.random();
 
 
@@ -1976,20 +2690,20 @@ if (
 
 
             if (
-                random <
-                .08
+                randomColor <
+                .075
             ) {
 
                 color =
-                    "170,195,255";
+                    "165,190,255";
 
             } else if (
-                random >
+                randomColor >
                 .94
             ) {
 
                 color =
-                    "255,220,185";
+                    "255,218,180";
 
             }
 
@@ -2005,12 +2719,12 @@ if (
                     height,
 
                 size:
-                    .12 +
+                    .10 +
                     Math.random() *
-                    1.2,
+                    1.25,
 
                 alpha:
-                    .06 +
+                    .045 +
                     Math.random() *
                     .62,
 
@@ -2019,15 +2733,19 @@ if (
                     Math.PI *
                     2,
 
-                speed:
-                    .003 +
+                twinkle:
+                    .002 +
                     Math.random() *
                     .012,
 
                 depth:
                     Math.random(),
 
-                color
+                color,
+
+                flare:
+                    Math.random() >
+                    .987
 
             });
 
@@ -2036,15 +2754,21 @@ if (
     }
 
 
-    function createDust() {
 
-        dust = [];
+    /* =====================================================
+       POLVO
+    ====================================================== */
+
+    function generateDust() {
+
+        dust =
+            [];
 
 
         const amount =
             width <
             768
-                ? 55
+                ? 48
                 : 120;
 
 
@@ -2070,7 +2794,7 @@ if (
                         .5
                     )
                     *
-                    .055,
+                    .045,
 
                 vy:
                     (
@@ -2078,17 +2802,17 @@ if (
                         .5
                     )
                     *
-                    .055,
+                    .045,
 
                 size:
-                    .15 +
+                    .12 +
                     Math.random() *
-                    .7,
+                    .65,
 
                 alpha:
                     .01 +
                     Math.random() *
-                    .07
+                    .065
 
             });
 
@@ -2097,16 +2821,22 @@ if (
     }
 
 
-    function createRedParticles() {
 
-        redParticles = [];
+    /* =====================================================
+       POLVO ROJO
+    ====================================================== */
+
+    function generateRedDust() {
+
+        redDust =
+            [];
 
 
         const amount =
             width <
             768
-                ? 12
-                : 28;
+                ? 10
+                : 27;
 
 
         for (
@@ -2115,7 +2845,7 @@ if (
             i++
         ) {
 
-            redParticles.push({
+            redDust.push({
 
                 x:
                     Math.random() *
@@ -2126,19 +2856,19 @@ if (
                     height,
 
                 size:
-                    .2 +
+                    .20 +
                     Math.random() *
-                    1.1,
+                    1.2,
 
                 alpha:
-                    .015 +
+                    .012 +
                     Math.random() *
-                    .075,
+                    .07,
 
                 speed:
-                    .01 +
+                    .008 +
                     Math.random() *
-                    .035
+                    .030
 
             });
 
@@ -2146,6 +2876,71 @@ if (
 
     }
 
+
+
+    /* =====================================================
+       NUBES LEJANAS
+    ====================================================== */
+
+    function generateDistantClouds() {
+
+        distantClouds =
+            [];
+
+
+        const amount =
+            6;
+
+
+        for (
+            let i = 0;
+            i < amount;
+            i++
+        ) {
+
+            distantClouds.push({
+
+                x:
+                    Math.random() *
+                    width,
+
+                y:
+                    Math.random() *
+                    height,
+
+                radius:
+                    180 +
+                    Math.random() *
+                    330,
+
+                alpha:
+                    .008 +
+                    Math.random() *
+                    .015,
+
+                red:
+                    Math.random() >
+                    .45,
+
+                drift:
+                    (
+                        Math.random() -
+                        .5
+                    )
+                    *
+                    .018
+
+            });
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       ESTRELLA FUGAZ
+    ====================================================== */
 
     function createShootingStar() {
 
@@ -2156,43 +2951,48 @@ if (
                 (
                     .25 +
                     Math.random() *
-                    .7
+                    .70
                 ),
 
             y:
                 Math.random() *
                 height *
-                .35,
+                .36,
 
             vx:
-                -9 -
+                -8 -
                 Math.random() *
                 8,
 
             vy:
-                5 +
+                4.5 +
                 Math.random() *
                 5,
 
             length:
-                100 +
+                90 +
                 Math.random() *
-                140,
+                150,
 
             life:
                 0,
 
             maxLife:
-                38 +
+                35 +
                 Math.random() *
-                28
+                30
 
         });
 
     }
 
 
-    function drawNebulas() {
+
+    /* =====================================================
+       NEBULOSAS CANVAS
+    ====================================================== */
+
+    function drawMainNebulas() {
 
         const red =
             ctx.createRadialGradient(
@@ -2201,7 +3001,7 @@ if (
                 .12,
 
                 height *
-                .36,
+                .35,
 
                 0,
 
@@ -2209,7 +3009,7 @@ if (
                 .12,
 
                 height *
-                .36,
+                .35,
 
                 Math.max(
                     width,
@@ -2223,7 +3023,7 @@ if (
 
         red.addColorStop(
             0,
-            "rgba(105,0,14,.09)"
+            "rgba(105,0,14,.085)"
         );
 
 
@@ -2251,6 +3051,7 @@ if (
         );
 
 
+
         const purple =
             ctx.createRadialGradient(
 
@@ -2258,7 +3059,7 @@ if (
                 .80,
 
                 height *
-                .48,
+                .46,
 
                 0,
 
@@ -2266,21 +3067,21 @@ if (
                 .80,
 
                 height *
-                .48,
+                .46,
 
                 Math.max(
                     width,
                     height
                 )
                 *
-                .50
+                .52
 
             );
 
 
         purple.addColorStop(
             0,
-            "rgba(55,38,110,.065)"
+            "rgba(50,35,105,.060)"
         );
 
 
@@ -2301,7 +3102,104 @@ if (
             height
         );
 
+
+
+        /* BANDA GALÁCTICA */
+
+        ctx.save();
+
+
+        ctx.translate(
+            width *
+            .49,
+            height *
+            .48
+        );
+
+
+        ctx.rotate(
+            -.28
+        );
+
+
+        ctx.scale(
+            1.75,
+            .33
+        );
+
+
+        const galaxy =
+            ctx.createRadialGradient(
+
+                0,
+                0,
+                0,
+
+                0,
+                0,
+
+                Math.max(
+                    width,
+                    height
+                )
+                *
+                .48
+
+            );
+
+
+        galaxy.addColorStop(
+            0,
+            "rgba(95,65,135,.027)"
+        );
+
+
+        galaxy.addColorStop(
+            .4,
+            "rgba(55,28,85,.017)"
+        );
+
+
+        galaxy.addColorStop(
+            1,
+            "rgba(0,0,0,0)"
+        );
+
+
+        ctx.fillStyle =
+            galaxy;
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+
+            0,
+            0,
+
+            Math.max(
+                width,
+                height
+            )
+            *
+            .5,
+
+            0,
+
+            Math.PI *
+            2
+
+        );
+
+
+        ctx.fill();
+
+
+        ctx.restore();
+
     }
+
 
 
     window.addEventListener(
@@ -2316,22 +3214,20 @@ if (
             }
 
 
-            mouseX =
+            pointerX =
                 (
                     event.clientX /
-                    width
-                    -
+                    width -
                     .5
                 )
                 *
                 2;
 
 
-            mouseY =
+            pointerY =
                 (
                     event.clientY /
-                    height
-                    -
+                    height -
                     .5
                 )
                 *
@@ -2344,27 +3240,35 @@ if (
     );
 
 
+
+    /* =====================================================
+       LOOP UNIVERSO
+    ====================================================== */
+
     function animateUniverse(
         time
     ) {
 
         smoothX +=
             (
-                mouseX -
+                pointerX -
                 smoothX
             )
             *
-            .02;
+            .018;
 
 
         smoothY +=
             (
-                mouseY -
+                pointerY -
                 smoothY
             )
             *
-            .02;
+            .018;
 
+
+
+        /* FONDO */
 
         const background =
             ctx.createRadialGradient(
@@ -2373,7 +3277,7 @@ if (
                 .5,
 
                 height *
-                .40,
+                .38,
 
                 0,
 
@@ -2398,7 +3302,7 @@ if (
 
 
         background.addColorStop(
-            .33,
+            .32,
             "#040407"
         );
 
@@ -2427,7 +3331,72 @@ if (
         );
 
 
-        drawNebulas();
+        drawMainNebulas();
+
+
+
+        /* NUBES DISTANTES */
+
+        distantClouds.forEach(
+            cloud => {
+
+                cloud.x +=
+                    cloud.drift;
+
+
+                const gradient =
+                    ctx.createRadialGradient(
+
+                        cloud.x,
+                        cloud.y,
+                        0,
+
+                        cloud.x,
+                        cloud.y,
+                        cloud.radius
+
+                    );
+
+
+                if (
+                    cloud.red
+                ) {
+
+                    gradient.addColorStop(
+                        0,
+                        `rgba(100,0,14,${cloud.alpha})`
+                    );
+
+                } else {
+
+                    gradient.addColorStop(
+                        0,
+                        `rgba(45,35,100,${cloud.alpha})`
+                    );
+
+                }
+
+
+                gradient.addColorStop(
+                    1,
+                    "rgba(0,0,0,0)"
+                );
+
+
+                ctx.fillStyle =
+                    gradient;
+
+
+                ctx.fillRect(
+                    0,
+                    0,
+                    width,
+                    height
+                );
+
+            }
+        );
+
 
 
         /* ESTRELLAS */
@@ -2436,7 +3405,7 @@ if (
             star => {
 
                 star.phase +=
-                    star.speed;
+                    star.twinkle;
 
 
                 let alpha =
@@ -2450,12 +3419,12 @@ if (
 
                 alpha =
                     Math.max(
-                        .02,
+                        .015,
                         alpha
                     );
 
 
-                const parallax =
+                const offset =
                     star.depth *
                     7;
 
@@ -2463,13 +3432,13 @@ if (
                 const x =
                     star.x +
                     smoothX *
-                    parallax;
+                    offset;
 
 
                 const y =
                     star.y +
                     smoothY *
-                    parallax;
+                    offset;
 
 
                 ctx.beginPath();
@@ -2478,7 +3447,6 @@ if (
                 ctx.arc(
 
                     x,
-
                     y,
 
                     star.size,
@@ -2497,8 +3465,62 @@ if (
 
                 ctx.fill();
 
+
+
+                if (
+                    star.flare
+                ) {
+
+                    ctx.strokeStyle =
+                        `rgba(${star.color},${alpha * .20})`;
+
+
+                    ctx.lineWidth =
+                        .45;
+
+
+                    ctx.beginPath();
+
+
+                    ctx.moveTo(
+                        x -
+                        star.size *
+                        5,
+                        y
+                    );
+
+
+                    ctx.lineTo(
+                        x +
+                        star.size *
+                        5,
+                        y
+                    );
+
+
+                    ctx.moveTo(
+                        x,
+                        y -
+                        star.size *
+                        5
+                    );
+
+
+                    ctx.lineTo(
+                        x,
+                        y +
+                        star.size *
+                        5
+                    );
+
+
+                    ctx.stroke();
+
+                }
+
             }
         );
+
 
 
         /* POLVO */
@@ -2518,10 +3540,8 @@ if (
                     particle.x <
                     0
                 ) {
-
                     particle.x =
                         width;
-
                 }
 
 
@@ -2529,10 +3549,8 @@ if (
                     particle.x >
                     width
                 ) {
-
                     particle.x =
                         0;
-
                 }
 
 
@@ -2540,10 +3558,8 @@ if (
                     particle.y <
                     0
                 ) {
-
                     particle.y =
                         height;
-
                 }
 
 
@@ -2551,10 +3567,8 @@ if (
                     particle.y >
                     height
                 ) {
-
                     particle.y =
                         0;
-
                 }
 
 
@@ -2564,7 +3578,6 @@ if (
                 ctx.arc(
 
                     particle.x,
-
                     particle.y,
 
                     particle.size,
@@ -2587,9 +3600,10 @@ if (
         );
 
 
+
         /* PARTÍCULAS ROJAS */
 
-        redParticles.forEach(
+        redDust.forEach(
             particle => {
 
                 particle.y -=
@@ -2619,7 +3633,6 @@ if (
                 ctx.arc(
 
                     particle.x,
-
                     particle.y,
 
                     particle.size,
@@ -2633,13 +3646,26 @@ if (
 
 
                 ctx.fillStyle =
-                    `rgba(255,20,38,${particle.alpha})`;
+                    `rgba(255,18,38,${particle.alpha})`;
+
+
+                ctx.shadowBlur =
+                    6;
+
+
+                ctx.shadowColor =
+                    "#ff1028";
 
 
                 ctx.fill();
 
+
+                ctx.shadowBlur =
+                    0;
+
             }
         );
+
 
 
         /* ESTRELLAS FUGACES */
@@ -2696,10 +3722,8 @@ if (
 
 
             const magnitude =
-                Math.sqrt(
-                    star.vx *
-                    star.vx +
-                    star.vy *
+                Math.hypot(
+                    star.vx,
                     star.vy
                 );
 
@@ -2730,11 +3754,9 @@ if (
                 ctx.createLinearGradient(
 
                     tailX,
-
                     tailY,
 
                     star.x,
-
                     star.y
 
                 );
@@ -2742,13 +3764,13 @@ if (
 
             gradient.addColorStop(
                 0,
-                "rgba(220,225,255,0)"
+                "rgba(225,230,255,0)"
             );
 
 
             gradient.addColorStop(
                 1,
-                `rgba(210,220,255,${opacity * .55})`
+                `rgba(220,228,255,${opacity * .55})`
             );
 
 
@@ -2800,12 +3822,14 @@ if (
     }
 
 
+
     resizeUniverse();
 
 
     requestAnimationFrame(
         animateUniverse
     );
+
 
 
     let resizeTimer;
