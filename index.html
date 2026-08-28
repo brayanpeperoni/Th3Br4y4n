@@ -1,114 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-  <title>THE BRAYAN | Web & Creative Design</title>
+    <title>THE BRAYAN | Web & Creative Design</title>
 
-  <meta
-    name="description"
-    content="THE BRAYAN - Desarrollo páginas web modernas, creo diseños gráficos profesionales y elaboro documentos personalizados para negocios, emprendimientos, estudiantes y marcas."
-  >
+    <meta
+        name="description"
+        content="THE BRAYAN - Desarrollo páginas web modernas, creo diseños gráficos profesionales y elaboro documentos personalizados para negocios, emprendimientos, estudiantes y marcas."
+    >
 
-  <!-- IMAGEN DEL LINK AL COMPARTIR -->
-  <meta property="og:title" content="THE BRAYAN | Web & Creative Design">
+    <!-- VISTA PREVIA DEL ENLACE -->
+    <meta
+        property="og:title"
+        content="THE BRAYAN | Web & Creative Design"
+    >
 
-  <meta
-    property="og:description"
-    content="Desarrollo Web · Diseño Gráfico · Documentos Profesionales"
-  >
+    <meta
+        property="og:description"
+        content="Desarrollo Web · Diseño Gráfico · Documentos Profesionales"
+    >
 
-  <meta
-    property="og:image"
-    content="https://th3br4yan.netlify.app/img/logobra.png"
-  >
+    <meta
+        property="og:image"
+        content="https://th3br4yan.netlify.app/img/logobra.png"
+    >
 
-  <meta
-    property="og:image:secure_url"
-    content="https://th3br4yan.netlify.app/img/logobra.png"
-  >
+    <meta
+        property="og:image:secure_url"
+        content="https://th3br4yan.netlify.app/img/logobra.png"
+    >
 
-  <meta property="og:image:type" content="image/png">
+    <meta
+        property="og:image:type"
+        content="image/png"
+    >
 
-  <meta
-    property="og:image:alt"
-    content="Logo THE BRAYAN"
-  >
+    <meta
+        property="og:url"
+        content="https://th3br4yan.netlify.app/"
+    >
 
-  <meta
-    property="og:url"
-    content="https://th3br4yan.netlify.app/"
-  >
+    <meta
+        property="og:type"
+        content="website"
+    >
 
-  <meta property="og:type" content="website">
-
-  <meta property="og:site_name" content="THE BRAYAN">
-
-
-  <!-- PARA TWITTER / X -->
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  >
-
-  <meta
-    name="twitter:title"
-    content="THE BRAYAN | Web & Creative Design"
-  >
-
-  <meta
-    name="twitter:description"
-    content="Desarrollo Web · Diseño Gráfico · Documentos Profesionales"
-  >
-
-  <meta
-    name="twitter:image"
-    content="https://th3br4yan.netlify.app/img/logobra.png"
-  >
+    <meta
+        property="og:site_name"
+        content="THE BRAYAN"
+    >
 
 
-  <!-- ICONO DE LA PESTAÑA -->
-  <link
-    rel="icon"
-    href="./img/logobra.png"
-    type="image/png"
-  >
+    <!-- X / TWITTER -->
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
 
-  <link
-    rel="apple-touch-icon"
-    href="./img/logobra.png"
-  >
+    <meta
+        name="twitter:title"
+        content="THE BRAYAN | Web & Creative Design"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Desarrollo Web · Diseño Gráfico · Documentos Profesionales"
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://th3br4yan.netlify.app/img/logobra.png"
+    >
 
 
-  <!-- CSS -->
-  <link
-    rel="stylesheet"
-    href="./style.css"
-  >
+    <!-- ICONO -->
+    <link
+        rel="icon"
+        href="./img/logobra.png"
+        type="image/png"
+    >
 
+    <link
+        rel="apple-touch-icon"
+        href="./img/logobra.png"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
 </head>
+
 
 <body class="intro-active">
 
+
     <!-- =====================================================
-         FONDO UNIVERSO
+         UNIVERSO GENERAL
     ====================================================== -->
 
     <canvas id="universeCanvas"></canvas>
 
-    <div class="space-effects">
-        <div class="nebula nebula-red"></div>
-        <div class="nebula nebula-purple"></div>
+
+    <div class="space-layers">
+
+        <div class="nebula nebula-one"></div>
+        <div class="nebula nebula-two"></div>
+        <div class="nebula nebula-three"></div>
+
+        <div class="deep-space-noise"></div>
+
         <div class="space-vignette"></div>
+
     </div>
 
 
-    <!-- MURCIÉLAGOS DECORATIVOS -->
+    <!-- MURCIÉLAGOS EN BORDES -->
     <div
         class="edge-bats"
         id="edgeBats"
@@ -116,8 +130,9 @@
     ></div>
 
 
+
     <!-- =====================================================
-         INTRO ÉPICA
+         INTRO CINEMATOGRÁFICA
     ====================================================== -->
 
     <div
@@ -125,11 +140,14 @@
         id="introScreen"
     >
 
-        <!-- SOLO RAYOS ROJOS -->
+        <!-- RAYOS EN TODA LA PANTALLA -->
         <canvas id="lightningCanvas"></canvas>
 
-        <div class="intro-red-fog fog-left"></div>
-        <div class="intro-red-fog fog-right"></div>
+
+        <div class="intro-red-cloud cloud-left"></div>
+
+        <div class="intro-red-cloud cloud-right"></div>
+
 
         <div
             class="intro-bats"
@@ -140,28 +158,43 @@
 
         <div class="intro-center">
 
+
             <div
                 class="intro-logo-scene"
                 id="introLogoScene"
             >
 
-                <div class="intro-red-core"></div>
+                <div class="intro-energy-core"></div>
 
-                <div class="intro-orbit intro-orbit-1"></div>
-                <div class="intro-orbit intro-orbit-2"></div>
-                <div class="intro-orbit intro-orbit-3"></div>
+                <div class="intro-energy-wave wave-1"></div>
 
-                <span class="intro-dot dot-1"></span>
-                <span class="intro-dot dot-2"></span>
-                <span class="intro-dot dot-3"></span>
+                <div class="intro-energy-wave wave-2"></div>
 
 
-                <div class="intro-logo">
+                <div class="intro-orbit orbit-intro-1"></div>
+
+                <div class="intro-orbit orbit-intro-2"></div>
+
+                <div class="intro-orbit orbit-intro-3"></div>
+
+
+                <span class="intro-star-point isp-1"></span>
+
+                <span class="intro-star-point isp-2"></span>
+
+                <span class="intro-star-point isp-3"></span>
+
+                <span class="intro-star-point isp-4"></span>
+
+
+                <div class="intro-logo-wrap">
+
+                    <div class="intro-logo-back-glow"></div>
 
                     <img
                         src="./img/brayan.png"
                         alt="THE BRAYAN"
-                        class="brayan-logo"
+                        class="brayan-logo intro-logo-image"
                     >
 
                 </div>
@@ -169,12 +202,15 @@
             </div>
 
 
-            <div class="intro-brand">
+            <div class="intro-title">
 
-                <span class="intro-brand-line"></span>
+                <span class="intro-title-line"></span>
 
                 <h1>
-                    THE <strong>BRAYAN</strong>
+                    THE
+                    <strong>
+                        BRAYAN
+                    </strong>
                 </h1>
 
                 <p>
@@ -186,12 +222,26 @@
 
             <div class="intro-loading">
 
-                <span>
-                    INICIANDO EXPERIENCIA
-                </span>
+                <div class="intro-loading-info">
 
-                <div class="loading-track">
-                    <div class="loading-bar"></div>
+                    <span>
+                        INICIANDO EXPERIENCIA
+                    </span>
+
+                    <strong id="introPercent">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="intro-loading-track">
+
+                    <div
+                        class="intro-loading-bar"
+                        id="introLoadingBar"
+                    ></div>
+
                 </div>
 
             </div>
@@ -199,9 +249,13 @@
         </div>
 
 
-        <div class="intro-red-flash"></div>
+        <div
+            class="intro-red-flash"
+            id="introRedFlash"
+        ></div>
 
     </div>
+
 
 
     <!-- =====================================================
@@ -213,7 +267,8 @@
         id="header"
     >
 
-        <div class="container nav-container">
+        <div class="container header-container">
+
 
             <a
                 href="#inicio"
@@ -222,7 +277,7 @@
 
                 <div class="brand-logo">
 
-                    <div class="brand-glow"></div>
+                    <div class="brand-logo-glow"></div>
 
                     <img
                         src="./img/brayan.png"
@@ -246,6 +301,7 @@
                 </div>
 
             </a>
+
 
 
             <nav
@@ -276,7 +332,7 @@
 
                 <a
                     href="#cursos"
-                    class="nav-link"
+                    class="nav-link nav-course"
                 >
                     Cursos
                 </a>
@@ -298,14 +354,17 @@
             </nav>
 
 
+
             <button
                 class="menu-btn"
                 id="menuBtn"
                 aria-label="Abrir menú"
             >
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </button>
 
         </div>
@@ -313,8 +372,9 @@
     </header>
 
 
+
     <!-- =====================================================
-         INFORMACIÓN FLOTANTE
+         RELOJ + DISPONIBILIDAD
     ====================================================== -->
 
     <div
@@ -322,26 +382,34 @@
         id="topTools"
     >
 
-        <div class="clock-card">
+        <div class="clock-box">
 
-            <span class="clock-icon">
-                ◷
-            </span>
+            <div class="clock-circle">
 
-            <div>
-                <small>HORA LOCAL</small>
+                <span class="clock-hand"></span>
+
+            </div>
+
+
+            <div class="clock-info">
+
+                <small>
+                    HORA LOCAL
+                </small>
 
                 <strong id="liveClock">
                     00:00:00
                 </strong>
+
             </div>
 
         </div>
 
 
-        <div class="project-status">
 
-            <span class="status-dot"></span>
+        <div class="available-box">
+
+            <span class="available-dot"></span>
 
             <span>
                 Disponible para nuevos proyectos
@@ -352,15 +420,16 @@
     </div>
 
 
+
     <!-- =====================================================
-         CONTENIDO
+         MAIN
     ====================================================== -->
 
     <main>
 
 
         <!-- =================================================
-             INICIO
+             HERO
         ================================================== -->
 
         <section
@@ -368,16 +437,20 @@
             id="inicio"
         >
 
-            <div class="hero-red-light"></div>
-            <div class="hero-purple-light"></div>
+            <div class="hero-background-glow hero-glow-red"></div>
+
+            <div class="hero-background-glow hero-glow-purple"></div>
 
 
             <div class="container hero-container">
 
 
-                <!-- TEXTO -->
+                <!-- =========================================
+                     HERO TEXTO
+                ========================================== -->
 
                 <div class="hero-content">
+
 
                     <p class="hero-category intro-piece">
 
@@ -386,9 +459,13 @@
                     </p>
 
 
-                    <h1 class="intro-piece">
+                    <h1 class="hero-title intro-piece">
 
-                        Hago que tu negocio
+                        Hago que tu
+
+                        <strong>
+                            negocio
+                        </strong>
 
                         <span>
                             destaque en internet.
@@ -397,9 +474,9 @@
                     </h1>
 
 
-                    <div class="hero-description-box intro-piece">
+                    <div class="hero-description intro-piece">
 
-                        <span class="description-line"></span>
+                        <span class="hero-description-line"></span>
 
                         <p>
 
@@ -414,9 +491,9 @@
                     </div>
 
 
-                    <div class="typing-box intro-piece">
+                    <div class="typing-container intro-piece">
 
-                        <span class="typing-symbol">
+                        <span class="typing-prefix">
                             &gt;
                         </span>
 
@@ -433,18 +510,27 @@
 
                         <a
                             href="#trabajos"
-                            class="btn btn-primary"
+                            class="btn btn-main"
                         >
-                            Ver mis trabajos
-                            <span>↗</span>
+
+                            <span>
+                                Ver mis trabajos
+                            </span>
+
+                            <strong>
+                                ↗
+                            </strong>
+
                         </a>
 
 
                         <a
                             href="#contacto"
-                            class="btn btn-secondary"
+                            class="btn btn-dark"
                         >
+
                             Solicitar un proyecto
+
                         </a>
 
                     </div>
@@ -452,19 +538,36 @@
 
                     <div class="hero-features intro-piece">
 
-                        <div class="feature">
-                            <span>✓</span>
+                        <div class="feature-item">
+
+                            <span>
+                                ✓
+                            </span>
+
                             Diseño profesional
+
                         </div>
 
-                        <div class="feature">
-                            <span>✓</span>
+
+                        <div class="feature-item">
+
+                            <span>
+                                ✓
+                            </span>
+
                             Adaptado a celular y PC
+
                         </div>
 
-                        <div class="feature">
-                            <span>✓</span>
+
+                        <div class="feature-item">
+
+                            <span>
+                                ✓
+                            </span>
+
                             Atención personalizada
+
                         </div>
 
                     </div>
@@ -472,37 +575,49 @@
                 </div>
 
 
-                <!-- LOGO -->
+
+                <!-- =========================================
+                     HERO LOGO
+                ========================================== -->
 
                 <div class="hero-visual intro-piece">
 
 
-                    <!-- VER CURSOS ENCIMA DEL LOGO -->
+                    <!-- BOTÓN CURSOS GRANDE -->
 
                     <a
                         href="#cursos"
-                        class="hero-course-link"
+                        class="hero-course-button"
                     >
 
-                        <span class="course-link-icon">
-                            ▶
-                        </span>
+                        <div class="course-play">
 
-                        <div>
+                            <span>
+                                ▶
+                            </span>
+
+                        </div>
+
+
+                        <div class="course-button-info">
+
                             <small>
-                                APRENDER
+                                APRENDE Y MEJORA
                             </small>
 
                             <strong>
                                 Ver cursos
                             </strong>
+
                         </div>
 
-                        <span class="course-link-arrow">
+
+                        <div class="course-down">
                             ↓
-                        </span>
+                        </div>
 
                     </a>
+
 
 
                     <div
@@ -510,23 +625,31 @@
                         id="heroLogoScene"
                     >
 
-                        <div class="hero-logo-glow"></div>
-
-                        <div class="hero-orbit hero-orbit-1"></div>
-                        <div class="hero-orbit hero-orbit-2"></div>
-                        <div class="hero-orbit hero-orbit-3"></div>
-
-                        <span class="hero-dot hero-dot-1"></span>
-                        <span class="hero-dot hero-dot-2"></span>
-                        <span class="hero-dot hero-dot-3"></span>
+                        <div class="hero-logo-neon"></div>
 
 
-                        <div class="hero-logo-core">
+                        <div class="hero-orbit hero-orbit-one"></div>
+
+                        <div class="hero-orbit hero-orbit-two"></div>
+
+                        <div class="hero-orbit hero-orbit-three"></div>
+
+
+                        <span class="hero-orbit-dot hod-1"></span>
+
+                        <span class="hero-orbit-dot hod-2"></span>
+
+                        <span class="hero-orbit-dot hod-3"></span>
+
+
+                        <div class="hero-logo">
+
+                            <div class="hero-logo-red-back"></div>
 
                             <img
                                 src="./img/brayan.png"
                                 alt="THE BRAYAN"
-                                class="brayan-logo hero-main-logo"
+                                class="brayan-logo hero-logo-image"
                             >
 
                         </div>
@@ -534,21 +657,31 @@
                     </div>
 
 
-                    <div class="hero-signature">
+                    <div class="hero-brand-bottom">
 
                         <span></span>
 
-                        WEB · CREATIVE · TECHNOLOGY
+                        <strong>
+                            THE BRAYAN
+                        </strong>
 
                         <span></span>
 
                     </div>
+
+
+                    <p class="hero-subbrand">
+
+                        WEB · CREATIVE · TECHNOLOGY
+
+                    </p>
 
                 </div>
 
             </div>
 
         </section>
+
 
 
         <!-- =================================================
@@ -562,147 +695,208 @@
 
             <div class="container">
 
+
                 <div class="section-heading reveal">
 
-                    <span class="section-number">
+                    <span class="section-code">
+
                         01 / SERVICIOS
+
                     </span>
+
 
                     <h2>
 
                         Lo que puedo hacer
 
-                        <span>
+                        <strong>
                             por ti.
-                        </span>
+                        </strong>
 
                     </h2>
 
+
                     <p>
 
-                        Soluciones digitales, visuales
-                        y profesionales para negocios,
-                        emprendimientos, estudiantes
-                        y proyectos personales.
+                        Soluciones profesionales para ayudarte
+                        a destacar en internet, mejorar tu imagen
+                        y presentar tus proyectos de una manera
+                        moderna y profesional.
 
                     </p>
 
                 </div>
 
 
+
                 <div class="services-grid">
 
 
+                    <!-- SERVICIO 1 -->
+
                     <article class="service-card reveal">
 
-                        <div class="service-glow"></div>
+                        <div class="service-card-light"></div>
 
-                        <div class="service-top">
+
+                        <div class="service-header">
 
                             <div class="service-icon">
+
                                 &lt;/&gt;
+
                             </div>
 
-                            <span class="service-index">
+                            <span>
                                 01
                             </span>
 
                         </div>
 
+
                         <h3>
                             Desarrollo Web
                         </h3>
 
+
                         <p>
 
-                            Creación de páginas web modernas,
+                            Desarrollo páginas web modernas,
                             profesionales, rápidas y adaptadas
                             para celulares, tablets,
                             laptops y computadoras.
 
                         </p>
 
+
                         <div class="service-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+
+                            <span>
+                                HTML
+                            </span>
+
+                            <span>
+                                CSS
+                            </span>
+
+                            <span>
+                                JavaScript
+                            </span>
+
                         </div>
 
                     </article>
 
 
+
+                    <!-- SERVICIO 2 -->
+
                     <article class="service-card reveal">
 
-                        <div class="service-glow"></div>
+                        <div class="service-card-light"></div>
 
-                        <div class="service-top">
+
+                        <div class="service-header">
 
                             <div class="service-icon">
+
                                 ◇
+
                             </div>
 
-                            <span class="service-index">
+                            <span>
                                 02
                             </span>
 
                         </div>
 
+
                         <h3>
                             Diseño Gráfico
                         </h3>
 
+
                         <p>
 
-                            Flyers, tarjetas, banners,
-                            publicidad y contenido visual
-                            para redes sociales, negocios
-                            y emprendimientos.
+                            Diseño flyers, tarjetas,
+                            banners, publicidad, contenido
+                            para redes sociales y material
+                            visual para negocios.
 
                         </p>
 
+
                         <div class="service-tags">
-                            <span>Flyers</span>
-                            <span>Publicidad</span>
-                            <span>Redes Sociales</span>
+
+                            <span>
+                                Flyers
+                            </span>
+
+                            <span>
+                                Publicidad
+                            </span>
+
+                            <span>
+                                Redes Sociales
+                            </span>
+
                         </div>
 
                     </article>
 
 
+
+                    <!-- SERVICIO 3 -->
+
                     <article class="service-card reveal">
 
-                        <div class="service-glow"></div>
+                        <div class="service-card-light"></div>
 
-                        <div class="service-top">
 
-                            <div class="service-icon word-icon">
+                        <div class="service-header">
+
+                            <div class="service-icon service-word">
+
                                 W
+
                             </div>
 
-                            <span class="service-index">
+                            <span>
                                 03
                             </span>
 
                         </div>
 
+
                         <h3>
                             Documentos Profesionales
                         </h3>
+
 
                         <p>
 
                             Elaboración de informes,
                             currículums, cartas, trabajos,
                             portadas, tablas, formatos
-                            y documentos personalizados
-                            en Microsoft Word.
+                            y documentos personalizados.
 
                         </p>
 
+
                         <div class="service-tags">
-                            <span>Word</span>
-                            <span>Formatos</span>
-                            <span>Documentos</span>
+
+                            <span>
+                                Word
+                            </span>
+
+                            <span>
+                                Formatos
+                            </span>
+
+                            <span>
+                                Documentos
+                            </span>
+
                         </div>
 
                     </article>
@@ -714,8 +908,9 @@
         </section>
 
 
+
         <!-- =================================================
-             PROYECTOS
+             TRABAJOS
         ================================================== -->
 
         <section
@@ -725,25 +920,30 @@
 
             <div class="container">
 
+
                 <div class="section-heading reveal">
 
-                    <span class="section-number">
+                    <span class="section-code">
+
                         02 / MIS TRABAJOS
+
                     </span>
+
 
                     <h2>
 
                         Proyectos
 
-                        <span>
+                        <strong>
                             realizados.
-                        </span>
+                        </strong>
 
                     </h2>
 
+
                     <p>
 
-                        Algunos proyectos desarrollados
+                        Algunos trabajos desarrollados
                         y publicados actualmente en internet.
 
                     </p>
@@ -751,8 +951,11 @@
                 </div>
 
 
+
                 <div class="projects-grid">
 
+
+                    <!-- PROYECTO 01 -->
 
                     <a
                         href="https://cadetes-honor-huancayo.netlify.app/"
@@ -761,20 +964,23 @@
                         class="project-card reveal"
                     >
 
-                        <div class="project-glow"></div>
+                        <div class="project-light"></div>
 
-                        <div class="project-top">
 
-                            <span>01</span>
+                        <div class="project-header">
 
-                            <div class="project-arrow">
+                            <span>
+                                01
+                            </span>
+
+                            <div>
                                 ↗
                             </div>
 
                         </div>
 
 
-                        <div class="project-content">
+                        <div class="project-body">
 
                             <small>
                                 DESARROLLO WEB
@@ -787,22 +993,32 @@
                             <p>
 
                                 Página web informativa
-                                creada con una estructura moderna,
-                                clara y adaptable a diferentes
-                                dispositivos.
+                                con estructura moderna,
+                                profesional y adaptable
+                                a diferentes dispositivos.
 
                             </p>
 
                         </div>
 
 
-                        <div class="project-footer">
-                            <strong>Ver proyecto</strong>
-                            <span>Visitar ↗</span>
+                        <div class="project-bottom">
+
+                            <span>
+                                VISITAR PROYECTO
+                            </span>
+
+                            <strong>
+                                Abrir ↗
+                            </strong>
+
                         </div>
 
                     </a>
 
+
+
+                    <!-- PROYECTO 02 -->
 
                     <a
                         href="https://sahomijuego.netlify.app/"
@@ -811,20 +1027,23 @@
                         class="project-card reveal"
                     >
 
-                        <div class="project-glow"></div>
+                        <div class="project-light"></div>
 
-                        <div class="project-top">
 
-                            <span>02</span>
+                        <div class="project-header">
 
-                            <div class="project-arrow">
+                            <span>
+                                02
+                            </span>
+
+                            <div>
                                 ↗
                             </div>
 
                         </div>
 
 
-                        <div class="project-content">
+                        <div class="project-body">
 
                             <small>
                                 WEB INTERACTIVA
@@ -837,22 +1056,32 @@
                             <p>
 
                                 Experiencia web interactiva
-                                con actividades y juegos
-                                desarrollada con HTML,
-                                CSS y JavaScript.
+                                con juegos y actividades
+                                desarrollada utilizando
+                                HTML, CSS y JavaScript.
 
                             </p>
 
                         </div>
 
 
-                        <div class="project-footer">
-                            <strong>Ver proyecto</strong>
-                            <span>Visitar ↗</span>
+                        <div class="project-bottom">
+
+                            <span>
+                                VISITAR PROYECTO
+                            </span>
+
+                            <strong>
+                                Abrir ↗
+                            </strong>
+
                         </div>
 
                     </a>
 
+
+
+                    <!-- PROYECTO 03 -->
 
                     <a
                         href="https://cataleya2026.netlify.app/"
@@ -861,20 +1090,23 @@
                         class="project-card reveal"
                     >
 
-                        <div class="project-glow"></div>
+                        <div class="project-light"></div>
 
-                        <div class="project-top">
 
-                            <span>03</span>
+                        <div class="project-header">
 
-                            <div class="project-arrow">
+                            <span>
+                                03
+                            </span>
+
+                            <div>
                                 ↗
                             </div>
 
                         </div>
 
 
-                        <div class="project-content">
+                        <div class="project-body">
 
                             <small>
                                 CIENCIA & TECNOLOGÍA
@@ -886,19 +1118,26 @@
 
                             <p>
 
-                                Página web diseñada para
-                                presentar un proyecto de ciencia
-                                y tecnología de manera moderna
-                                e interactiva.
+                                Página web moderna
+                                para presentar un proyecto
+                                tecnológico escolar
+                                de manera interactiva.
 
                             </p>
 
                         </div>
 
 
-                        <div class="project-footer">
-                            <strong>Ver proyecto</strong>
-                            <span>Visitar ↗</span>
+                        <div class="project-bottom">
+
+                            <span>
+                                VISITAR PROYECTO
+                            </span>
+
+                            <strong>
+                                Abrir ↗
+                            </strong>
+
                         </div>
 
                     </a>
@@ -910,6 +1149,7 @@
         </section>
 
 
+
         <!-- =================================================
              CURSOS
         ================================================== -->
@@ -919,50 +1159,55 @@
             id="cursos"
         >
 
-            <div class="courses-word">
+            <div class="courses-background-word">
                 CURSOS
             </div>
 
 
             <div class="container">
 
-                <div class="courses-panel reveal">
+
+                <div class="courses-card reveal">
 
 
-                    <div class="courses-content">
+                    <div class="courses-info">
 
-                        <span class="section-number">
+                        <span class="section-code">
+
                             03 / CURSOS & RECURSOS
+
                         </span>
 
 
-                        <p class="courses-small">
+                        <p class="courses-pretitle">
+
                             APRENDER · CREAR · MEJORAR
+
                         </p>
 
 
                         <h2>
 
-                            Sigue aprendiendo
+                            Aprende nuevas
 
-                            <span>
-                                nuevas habilidades.
-                            </span>
+                            <strong>
+                                habilidades.
+                            </strong>
 
                         </h2>
 
 
                         <p class="courses-description">
 
-                            Accede a cursos y recursos
+                            Explora cursos y recursos
                             relacionados con programación,
-                            desarrollo web, informática,
-                            tecnología y diseño.
+                            informática, desarrollo web,
+                            diseño y tecnología.
 
                         </p>
 
 
-                        <div class="course-tags">
+                        <div class="courses-tags">
 
                             <span>
                                 &lt;/&gt; Programación
@@ -987,8 +1232,13 @@
                             href="https://elhacker.info/Cursos/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="courses-button"
+                            class="courses-main-button"
                         >
+
+                            <div class="courses-main-icon">
+                                ▶
+                            </div>
+
 
                             <div>
 
@@ -1002,6 +1252,7 @@
 
                             </div>
 
+
                             <span>
                                 ↗
                             </span>
@@ -1011,38 +1262,39 @@
                     </div>
 
 
-                    <!-- VISUAL CURSOS SIN TERMINAL -->
 
-                    <div class="courses-visual">
+                    <div class="courses-art">
 
-                        <div class="course-universe">
-
-                            <div class="course-glow"></div>
-
-                            <div class="course-orbit course-orbit-1"></div>
-                            <div class="course-orbit course-orbit-2"></div>
-                            <div class="course-orbit course-orbit-3"></div>
-
-                            <span class="course-dot cd-1"></span>
-                            <span class="course-dot cd-2"></span>
-                            <span class="course-dot cd-3"></span>
+                        <div class="courses-glow"></div>
 
 
-                            <div class="course-center">
+                        <div class="courses-orbit courses-orbit-1"></div>
 
-                                <span class="course-code">
-                                    &lt;/&gt;
-                                </span>
+                        <div class="courses-orbit courses-orbit-2"></div>
 
-                                <strong>
-                                    CURSOS
-                                </strong>
+                        <div class="courses-orbit courses-orbit-3"></div>
 
-                                <small>
-                                    ONLINE
-                                </small>
 
-                            </div>
+                        <span class="courses-dot cod-1"></span>
+
+                        <span class="courses-dot cod-2"></span>
+
+                        <span class="courses-dot cod-3"></span>
+
+
+                        <div class="courses-core">
+
+                            <span>
+                                &lt;/&gt;
+                            </span>
+
+                            <strong>
+                                CURSOS
+                            </strong>
+
+                            <small>
+                                ONLINE
+                            </small>
 
                         </div>
 
@@ -1053,6 +1305,7 @@
             </div>
 
         </section>
+
 
 
         <!-- =================================================
@@ -1067,30 +1320,31 @@
             <div class="container about-container">
 
 
-                <div class="about-visual reveal">
+                <div class="about-logo-area reveal">
 
-                    <div class="about-logo-scene">
+                    <div class="about-glow"></div>
 
-                        <div class="about-glow"></div>
+                    <div class="about-orbit about-orbit-one"></div>
 
-                        <div class="about-orbit about-orbit-1"></div>
-                        <div class="about-orbit about-orbit-2"></div>
+                    <div class="about-orbit about-orbit-two"></div>
 
-                        <img
-                            src="./img/brayan.png"
-                            alt="THE BRAYAN"
-                            class="brayan-logo about-logo"
-                        >
 
-                    </div>
+                    <img
+                        src="./img/brayan.png"
+                        alt="THE BRAYAN"
+                        class="brayan-logo about-logo"
+                    >
 
                 </div>
 
 
-                <div class="about-content reveal">
 
-                    <span class="section-number">
+                <div class="about-info reveal">
+
+                    <span class="section-code">
+
                         04 / SOBRE MÍ
+
                     </span>
 
 
@@ -1098,9 +1352,9 @@
 
                         Creatividad,
 
-                        <span>
+                        <strong>
                             tecnología y diseño.
-                        </span>
+                        </strong>
 
                     </h2>
 
@@ -1120,8 +1374,8 @@
                         Combino desarrollo web,
                         diseño gráfico y elaboración
                         de documentos profesionales
-                        para crear resultados modernos,
-                        funcionales y personalizados.
+                        para ofrecer soluciones modernas,
+                        funcionales y personalizadas.
 
                     </p>
 
@@ -1129,18 +1383,41 @@
                     <div class="about-skills">
 
                         <div>
-                            <strong>WEB</strong>
-                            <span>Desarrollo</span>
+
+                            <strong>
+                                WEB
+                            </strong>
+
+                            <span>
+                                Desarrollo
+                            </span>
+
                         </div>
 
-                        <div>
-                            <strong>DESIGN</strong>
-                            <span>Creatividad</span>
-                        </div>
 
                         <div>
-                            <strong>WORD</strong>
-                            <span>Documentos</span>
+
+                            <strong>
+                                DESIGN
+                            </strong>
+
+                            <span>
+                                Creatividad
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                WORD
+                            </strong>
+
+                            <span>
+                                Documentos
+                            </span>
+
                         </div>
 
                     </div>
@@ -1150,6 +1427,7 @@
             </div>
 
         </section>
+
 
 
         <!-- =================================================
@@ -1163,25 +1441,33 @@
 
             <div class="container">
 
-                <div class="contact-box reveal">
 
-                    <div class="contact-glow"></div>
+                <div class="contact-card reveal">
 
-                    <span class="section-number">
+                    <div class="contact-red-glow"></div>
+
+
+                    <span class="section-code">
+
                         05 / CONTACTO
+
                     </span>
 
-                    <p class="contact-small">
+
+                    <p class="contact-pretitle">
+
                         ¿TIENES UN PROYECTO EN MENTE?
+
                     </p>
+
 
                     <h2>
 
                         Hagamos algo
 
-                        <span>
+                        <strong>
                             increíble.
-                        </span>
+                        </strong>
 
                     </h2>
 
@@ -1190,7 +1476,7 @@
 
                         Si necesitas una página web,
                         diseño gráfico o documentos
-                        profesionales, puedes escribirme
+                        profesionales, escríbeme
                         directamente por WhatsApp.
 
                     </p>
@@ -1200,13 +1486,13 @@
                         href="#"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="whatsapp-card whatsapp-link"
+                        class="whatsapp-contact whatsapp-link"
                     >
 
-                        <div class="whatsapp-card-logo">
+                        <div class="whatsapp-contact-image">
 
                             <img
-                                src="./img/logo.png"
+                                src="./img/logo.jpg"
                                 alt="WhatsApp"
                             >
 
@@ -1223,12 +1509,16 @@
                                 WhatsApp
                             </strong>
 
+                            <span>
+                                +51 944 137 061
+                            </span>
+
                         </div>
 
 
-                        <span class="whatsapp-card-arrow">
+                        <b>
                             ↗
-                        </span>
+                        </b>
 
                     </a>
 
@@ -1241,6 +1531,7 @@
     </main>
 
 
+
     <!-- =====================================================
          FOOTER
     ====================================================== -->
@@ -1248,6 +1539,7 @@
     <footer class="footer">
 
         <div class="container footer-container">
+
 
             <div class="footer-brand">
 
@@ -1260,6 +1552,7 @@
                     >
 
                 </div>
+
 
                 <div>
 
@@ -1294,6 +1587,10 @@
                     Cursos
                 </a>
 
+                <a href="#sobre-mi">
+                    Sobre mí
+                </a>
+
                 <a href="#contacto">
                     Contacto
                 </a>
@@ -1305,12 +1602,14 @@
 
         <div class="footer-bottom">
 
-            © <span id="year"></span>
+            ©
+            <span id="year"></span>
             THE BRAYAN · Todos los derechos reservados.
 
         </div>
 
     </footer>
+
 
 
     <!-- =====================================================
@@ -1322,30 +1621,36 @@
         target="_blank"
         rel="noopener noreferrer"
         class="whatsapp-float whatsapp-link"
-        aria-label="WhatsApp"
+        aria-label="Contactar por WhatsApp"
     >
 
-        <span class="wa-ring wa-ring-1"></span>
-        <span class="wa-ring wa-ring-2"></span>
+        <span class="wa-pulse wa-pulse-one"></span>
+
+        <span class="wa-pulse wa-pulse-two"></span>
+
 
         <img
-            src="./img/logo.png"
+            src="./img/logo.jpg"
             alt="WhatsApp"
-            class="whatsapp-logo"
+            class="whatsapp-float-image"
         >
 
     </a>
 
 
+
     <!-- VOLVER ARRIBA -->
 
     <button
-        id="backTop"
         class="back-top"
+        id="backTop"
         aria-label="Volver arriba"
     >
+
         ↑
+
     </button>
+
 
 
     <script src="./script.js"></script>
