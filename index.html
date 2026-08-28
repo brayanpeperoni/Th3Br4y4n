@@ -2,89 +2,1353 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TH3 BR4Y4N</title>
-  <link rel="stylesheet" href="style.css">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>THE BRAYAN | Web & Creative Design</title>
+
+  <meta
+    name="description"
+    content="THE BRAYAN - Desarrollo páginas web modernas, creo diseños gráficos profesionales y elaboro documentos personalizados para negocios, emprendimientos, estudiantes y marcas."
+  >
+
+  <!-- IMAGEN DEL LINK AL COMPARTIR -->
+  <meta property="og:title" content="THE BRAYAN | Web & Creative Design">
+
+  <meta
+    property="og:description"
+    content="Desarrollo Web · Diseño Gráfico · Documentos Profesionales"
+  >
+
+  <meta
+    property="og:image"
+    content="https://th3br4yan.netlify.app/img/logobra.png"
+  >
+
+  <meta
+    property="og:image:secure_url"
+    content="https://th3br4yan.netlify.app/img/logobra.png"
+  >
+
+  <meta property="og:image:type" content="image/png">
+
+  <meta
+    property="og:image:alt"
+    content="Logo THE BRAYAN"
+  >
+
+  <meta
+    property="og:url"
+    content="https://th3br4yan.netlify.app/"
+  >
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:site_name" content="THE BRAYAN">
+
+
+  <!-- PARA TWITTER / X -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="THE BRAYAN | Web & Creative Design"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Desarrollo Web · Diseño Gráfico · Documentos Profesionales"
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://th3br4yan.netlify.app/img/logobra.png"
+  >
+
+
+  <!-- ICONO DE LA PESTAÑA -->
+  <link
+    rel="icon"
+    href="./img/logobra.png"
+    type="image/png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="./img/logobra.png"
+  >
+
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="./style.css"
+  >
+
 </head>
-<body>
-  <canvas id="matrixCanvas"></canvas>
 
-  <h1 class="glow">BIENVENIDOS A LA PÁGINA DE<br>"TH3 BR4Y4N"</h1>
-  <hr>
+<body class="intro-active">
 
-  <div class="agradecimiento">
-    <button id="botonCurso" onclick="irACurso()">IR A CURSO DE HACKING 💻</button>
-  </div>
+    <!-- =====================================================
+         FONDO UNIVERSO
+    ====================================================== -->
 
-  <div id="reloj" class="glow reloj-digital"></div>
+    <canvas id="universeCanvas"></canvas>
 
-  <footer class="footer-flex">
-  <!-- IZQUIERDA -->
-  <div class="recomendaciones">
-    <h3>💡 Recomendaciones del Admin</h3>
-    <ul>
-      <li>Instala Kali Linux y explora sus herramientas.</li>
-      <li>Aprende sobre redes y protocolos (TCP/IP, DNS, DHCP).</li>
-      <li>Practica con máquinas virtuales como Metasploitable.</li>
-      <li>Visita <a href="https://tryhackme.com" target="_blank">TryHackMe</a> para retos.</li>
-      <li>Mantente siempre en modo aprendizaje 🧠💻.</li>
-    </ul>
-  </div>
-
-  <!-- DERECHA -->
-  <div class="canciones">
-    <h3>🎧 TOP 5 CANCIONES ÉPICAS</h3>
-    <a href="https://www.youtube.com/watch?v=BTRCZvDPH1Y" target="_blank" onclick="reproducirSonido()">🎵 26is SAUNA</a>
-    <a href="https://www.youtube.com/watch?v=pdH9SGtPdiY" target="_blank" onclick="reproducirSonido()">🎵 KOKO ⛰️ - Jeyceu</a>
-    <a href="https://www.youtube.com/watch?v=_olRJ3Ni244" target="_blank" onclick="reproducirSonido()">🎵 PÁRATE BONITO</a>
-    <a href="https://www.youtube.com/watch?v=TftTeDrp09s" target="_blank" onclick="reproducirSonido()">🎵 Oh Que Lokazo</a>
-    <a href="https://www.youtube.com/watch?v=GVbI-X35aE8" target="_blank" onclick="reproducirSonido()">🎵 El primer trago</a>
-  </div>
-</footer>
-
-<!-- Aviso legal -->
-<small style="color: #222; font-size: 10px; text-align: center; opacity: 0.3; display: block; margin-top: 20px;">
-  Enlaces externos pertenecen a sus respectivos dueños. Esta es una página educativa/personal sin fines de lucro.
-</small>
+    <div class="space-effects">
+        <div class="nebula nebula-red"></div>
+        <div class="nebula nebula-purple"></div>
+        <div class="space-vignette"></div>
+    </div>
 
 
+    <!-- MURCIÉLAGOS DECORATIVOS -->
+    <div
+        class="edge-bats"
+        id="edgeBats"
+        aria-hidden="true"
+    ></div>
 
-  <audio id="sonido" src="https://www.myinstants.com/media/sounds/windows-xp-error.mp3"></audio>
-  <script src="script.js"></script>
-  <div class="terminal-falsa">
-  <p id="cmd-output" class="glow">root@th3br4y4n:~$</p>
-</div>
 
-<script>
-  const comandos = [
-    "nmap -sV 192.168.1.1",
-    "ping google.com -t",
-    "sudo apt install metasploit",
-    "hydra -l admin -P rockyou.txt 192.168.1.5 ssh",
-    "echo 'Bienvenido al sistema de TH3 BR4Y4N 💻'"
-  ];
+    <!-- =====================================================
+         INTRO ÉPICA
+    ====================================================== -->
 
-  let index = 0;
+    <div
+        class="intro-screen"
+        id="introScreen"
+    >
 
-  function escribirComando(texto, i = 0) {
-    if (i < texto.length) {
-      document.getElementById("cmd-output").innerHTML += texto.charAt(i);
-      setTimeout(() => escribirComando(texto, i + 1), 70);
-    } else {
-      setTimeout(() => {
-        document.getElementById("cmd-output").innerHTML += "<br><span class='glow'>root@th3br4y4n:~$ </span>";
-        index = (index + 1) % comandos.length;
-        escribirComando(comandos[index]);
-      }, 1500);
-    }
-  }
+        <!-- SOLO RAYOS ROJOS -->
+        <canvas id="lightningCanvas"></canvas>
 
-  escribirComando(comandos[index]);
-</script>
+        <div class="intro-red-fog fog-left"></div>
+        <div class="intro-red-fog fog-right"></div>
+
+        <div
+            class="intro-bats"
+            id="introBats"
+            aria-hidden="true"
+        ></div>
+
+
+        <div class="intro-center">
+
+            <div
+                class="intro-logo-scene"
+                id="introLogoScene"
+            >
+
+                <div class="intro-red-core"></div>
+
+                <div class="intro-orbit intro-orbit-1"></div>
+                <div class="intro-orbit intro-orbit-2"></div>
+                <div class="intro-orbit intro-orbit-3"></div>
+
+                <span class="intro-dot dot-1"></span>
+                <span class="intro-dot dot-2"></span>
+                <span class="intro-dot dot-3"></span>
+
+
+                <div class="intro-logo">
+
+                    <img
+                        src="./img/brayan.png"
+                        alt="THE BRAYAN"
+                        class="brayan-logo"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="intro-brand">
+
+                <span class="intro-brand-line"></span>
+
+                <h1>
+                    THE <strong>BRAYAN</strong>
+                </h1>
+
+                <p>
+                    WEB · DESIGN · DOCUMENTS
+                </p>
+
+            </div>
+
+
+            <div class="intro-loading">
+
+                <span>
+                    INICIANDO EXPERIENCIA
+                </span>
+
+                <div class="loading-track">
+                    <div class="loading-bar"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="intro-red-flash"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="header"
+        id="header"
+    >
+
+        <div class="container nav-container">
+
+            <a
+                href="#inicio"
+                class="brand"
+            >
+
+                <div class="brand-logo">
+
+                    <div class="brand-glow"></div>
+
+                    <img
+                        src="./img/brayan.png"
+                        alt="THE BRAYAN"
+                        class="brayan-logo"
+                    >
+
+                </div>
+
+
+                <div class="brand-text">
+
+                    <strong>
+                        THE BRAYAN
+                    </strong>
+
+                    <span>
+                        WEB & CREATIVE DESIGN
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <nav
+                class="nav"
+                id="nav"
+            >
+
+                <a
+                    href="#inicio"
+                    class="nav-link active"
+                >
+                    Inicio
+                </a>
+
+                <a
+                    href="#servicios"
+                    class="nav-link"
+                >
+                    Servicios
+                </a>
+
+                <a
+                    href="#trabajos"
+                    class="nav-link"
+                >
+                    Mis trabajos
+                </a>
+
+                <a
+                    href="#cursos"
+                    class="nav-link"
+                >
+                    Cursos
+                </a>
+
+                <a
+                    href="#sobre-mi"
+                    class="nav-link"
+                >
+                    Sobre mí
+                </a>
+
+                <a
+                    href="#contacto"
+                    class="nav-contact"
+                >
+                    Contacto
+                </a>
+
+            </nav>
+
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Abrir menú"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         INFORMACIÓN FLOTANTE
+    ====================================================== -->
+
+    <div
+        class="top-tools"
+        id="topTools"
+    >
+
+        <div class="clock-card">
+
+            <span class="clock-icon">
+                ◷
+            </span>
+
+            <div>
+                <small>HORA LOCAL</small>
+
+                <strong id="liveClock">
+                    00:00:00
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="project-status">
+
+            <span class="status-dot"></span>
+
+            <span>
+                Disponible para nuevos proyectos
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CONTENIDO
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             INICIO
+        ================================================== -->
+
+        <section
+            class="hero"
+            id="inicio"
+        >
+
+            <div class="hero-red-light"></div>
+            <div class="hero-purple-light"></div>
+
+
+            <div class="container hero-container">
+
+
+                <!-- TEXTO -->
+
+                <div class="hero-content">
+
+                    <p class="hero-category intro-piece">
+
+                        DESARROLLO WEB · DISEÑO GRÁFICO · DOCUMENTOS PROFESIONALES
+
+                    </p>
+
+
+                    <h1 class="intro-piece">
+
+                        Hago que tu negocio
+
+                        <span>
+                            destaque en internet.
+                        </span>
+
+                    </h1>
+
+
+                    <div class="hero-description-box intro-piece">
+
+                        <span class="description-line"></span>
+
+                        <p>
+
+                            Desarrollo páginas web modernas,
+                            creo diseños gráficos profesionales
+                            y elaboro documentos personalizados
+                            para negocios, emprendimientos,
+                            estudiantes y marcas.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="typing-box intro-piece">
+
+                        <span class="typing-symbol">
+                            &gt;
+                        </span>
+
+                        <span id="typingText"></span>
+
+                        <span class="typing-cursor">
+                            _
+                        </span>
+
+                    </div>
+
+
+                    <div class="hero-buttons intro-piece">
+
+                        <a
+                            href="#trabajos"
+                            class="btn btn-primary"
+                        >
+                            Ver mis trabajos
+                            <span>↗</span>
+                        </a>
+
+
+                        <a
+                            href="#contacto"
+                            class="btn btn-secondary"
+                        >
+                            Solicitar un proyecto
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-features intro-piece">
+
+                        <div class="feature">
+                            <span>✓</span>
+                            Diseño profesional
+                        </div>
+
+                        <div class="feature">
+                            <span>✓</span>
+                            Adaptado a celular y PC
+                        </div>
+
+                        <div class="feature">
+                            <span>✓</span>
+                            Atención personalizada
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOGO -->
+
+                <div class="hero-visual intro-piece">
+
+
+                    <!-- VER CURSOS ENCIMA DEL LOGO -->
+
+                    <a
+                        href="#cursos"
+                        class="hero-course-link"
+                    >
+
+                        <span class="course-link-icon">
+                            ▶
+                        </span>
+
+                        <div>
+                            <small>
+                                APRENDER
+                            </small>
+
+                            <strong>
+                                Ver cursos
+                            </strong>
+                        </div>
+
+                        <span class="course-link-arrow">
+                            ↓
+                        </span>
+
+                    </a>
+
+
+                    <div
+                        class="hero-logo-scene"
+                        id="heroLogoScene"
+                    >
+
+                        <div class="hero-logo-glow"></div>
+
+                        <div class="hero-orbit hero-orbit-1"></div>
+                        <div class="hero-orbit hero-orbit-2"></div>
+                        <div class="hero-orbit hero-orbit-3"></div>
+
+                        <span class="hero-dot hero-dot-1"></span>
+                        <span class="hero-dot hero-dot-2"></span>
+                        <span class="hero-dot hero-dot-3"></span>
+
+
+                        <div class="hero-logo-core">
+
+                            <img
+                                src="./img/brayan.png"
+                                alt="THE BRAYAN"
+                                class="brayan-logo hero-main-logo"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-signature">
+
+                        <span></span>
+
+                        WEB · CREATIVE · TECHNOLOGY
+
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SERVICIOS
+        ================================================== -->
+
+        <section
+            class="section services-section"
+            id="servicios"
+        >
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">
+                        01 / SERVICIOS
+                    </span>
+
+                    <h2>
+
+                        Lo que puedo hacer
+
+                        <span>
+                            por ti.
+                        </span>
+
+                    </h2>
+
+                    <p>
+
+                        Soluciones digitales, visuales
+                        y profesionales para negocios,
+                        emprendimientos, estudiantes
+                        y proyectos personales.
+
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-glow"></div>
+
+                        <div class="service-top">
+
+                            <div class="service-icon">
+                                &lt;/&gt;
+                            </div>
+
+                            <span class="service-index">
+                                01
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Desarrollo Web
+                        </h3>
+
+                        <p>
+
+                            Creación de páginas web modernas,
+                            profesionales, rápidas y adaptadas
+                            para celulares, tablets,
+                            laptops y computadoras.
+
+                        </p>
+
+                        <div class="service-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-glow"></div>
+
+                        <div class="service-top">
+
+                            <div class="service-icon">
+                                ◇
+                            </div>
+
+                            <span class="service-index">
+                                02
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Diseño Gráfico
+                        </h3>
+
+                        <p>
+
+                            Flyers, tarjetas, banners,
+                            publicidad y contenido visual
+                            para redes sociales, negocios
+                            y emprendimientos.
+
+                        </p>
+
+                        <div class="service-tags">
+                            <span>Flyers</span>
+                            <span>Publicidad</span>
+                            <span>Redes Sociales</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-glow"></div>
+
+                        <div class="service-top">
+
+                            <div class="service-icon word-icon">
+                                W
+                            </div>
+
+                            <span class="service-index">
+                                03
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Documentos Profesionales
+                        </h3>
+
+                        <p>
+
+                            Elaboración de informes,
+                            currículums, cartas, trabajos,
+                            portadas, tablas, formatos
+                            y documentos personalizados
+                            en Microsoft Word.
+
+                        </p>
+
+                        <div class="service-tags">
+                            <span>Word</span>
+                            <span>Formatos</span>
+                            <span>Documentos</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROYECTOS
+        ================================================== -->
+
+        <section
+            class="section projects-section"
+            id="trabajos"
+        >
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">
+                        02 / MIS TRABAJOS
+                    </span>
+
+                    <h2>
+
+                        Proyectos
+
+                        <span>
+                            realizados.
+                        </span>
+
+                    </h2>
+
+                    <p>
+
+                        Algunos proyectos desarrollados
+                        y publicados actualmente en internet.
+
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <a
+                        href="https://cadetes-honor-huancayo.netlify.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-card reveal"
+                    >
+
+                        <div class="project-glow"></div>
+
+                        <div class="project-top">
+
+                            <span>01</span>
+
+                            <div class="project-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <small>
+                                DESARROLLO WEB
+                            </small>
+
+                            <h3>
+                                Cadetes Honor Huancayo
+                            </h3>
+
+                            <p>
+
+                                Página web informativa
+                                creada con una estructura moderna,
+                                clara y adaptable a diferentes
+                                dispositivos.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="project-footer">
+                            <strong>Ver proyecto</strong>
+                            <span>Visitar ↗</span>
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="https://sahomijuego.netlify.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-card reveal"
+                    >
+
+                        <div class="project-glow"></div>
+
+                        <div class="project-top">
+
+                            <span>02</span>
+
+                            <div class="project-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <small>
+                                WEB INTERACTIVA
+                            </small>
+
+                            <h3>
+                                Aventura Inka
+                            </h3>
+
+                            <p>
+
+                                Experiencia web interactiva
+                                con actividades y juegos
+                                desarrollada con HTML,
+                                CSS y JavaScript.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="project-footer">
+                            <strong>Ver proyecto</strong>
+                            <span>Visitar ↗</span>
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="https://cataleya2026.netlify.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-card reveal"
+                    >
+
+                        <div class="project-glow"></div>
+
+                        <div class="project-top">
+
+                            <span>03</span>
+
+                            <div class="project-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <small>
+                                CIENCIA & TECNOLOGÍA
+                            </small>
+
+                            <h3>
+                                Cataleya 2026
+                            </h3>
+
+                            <p>
+
+                                Página web diseñada para
+                                presentar un proyecto de ciencia
+                                y tecnología de manera moderna
+                                e interactiva.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="project-footer">
+                            <strong>Ver proyecto</strong>
+                            <span>Visitar ↗</span>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CURSOS
+        ================================================== -->
+
+        <section
+            class="section courses-section"
+            id="cursos"
+        >
+
+            <div class="courses-word">
+                CURSOS
+            </div>
+
+
+            <div class="container">
+
+                <div class="courses-panel reveal">
+
+
+                    <div class="courses-content">
+
+                        <span class="section-number">
+                            03 / CURSOS & RECURSOS
+                        </span>
+
+
+                        <p class="courses-small">
+                            APRENDER · CREAR · MEJORAR
+                        </p>
+
+
+                        <h2>
+
+                            Sigue aprendiendo
+
+                            <span>
+                                nuevas habilidades.
+                            </span>
+
+                        </h2>
+
+
+                        <p class="courses-description">
+
+                            Accede a cursos y recursos
+                            relacionados con programación,
+                            desarrollo web, informática,
+                            tecnología y diseño.
+
+                        </p>
+
+
+                        <div class="course-tags">
+
+                            <span>
+                                &lt;/&gt; Programación
+                            </span>
+
+                            <span>
+                                ◇ Diseño
+                            </span>
+
+                            <span>
+                                ⚡ Tecnología
+                            </span>
+
+                            <span>
+                                ◈ Informática
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="https://elhacker.info/Cursos/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="courses-button"
+                        >
+
+                            <div>
+
+                                <small>
+                                    ACCEDER AHORA
+                                </small>
+
+                                <strong>
+                                    Ver cursos
+                                </strong>
+
+                            </div>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- VISUAL CURSOS SIN TERMINAL -->
+
+                    <div class="courses-visual">
+
+                        <div class="course-universe">
+
+                            <div class="course-glow"></div>
+
+                            <div class="course-orbit course-orbit-1"></div>
+                            <div class="course-orbit course-orbit-2"></div>
+                            <div class="course-orbit course-orbit-3"></div>
+
+                            <span class="course-dot cd-1"></span>
+                            <span class="course-dot cd-2"></span>
+                            <span class="course-dot cd-3"></span>
+
+
+                            <div class="course-center">
+
+                                <span class="course-code">
+                                    &lt;/&gt;
+                                </span>
+
+                                <strong>
+                                    CURSOS
+                                </strong>
+
+                                <small>
+                                    ONLINE
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SOBRE MI
+        ================================================== -->
+
+        <section
+            class="section about-section"
+            id="sobre-mi"
+        >
+
+            <div class="container about-container">
+
+
+                <div class="about-visual reveal">
+
+                    <div class="about-logo-scene">
+
+                        <div class="about-glow"></div>
+
+                        <div class="about-orbit about-orbit-1"></div>
+                        <div class="about-orbit about-orbit-2"></div>
+
+                        <img
+                            src="./img/brayan.png"
+                            alt="THE BRAYAN"
+                            class="brayan-logo about-logo"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-content reveal">
+
+                    <span class="section-number">
+                        04 / SOBRE MÍ
+                    </span>
+
+
+                    <h2>
+
+                        Creatividad,
+
+                        <span>
+                            tecnología y diseño.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        THE BRAYAN es una marca enfocada
+                        en crear soluciones digitales
+                        y visuales para personas,
+                        negocios y emprendimientos.
+
+                    </p>
+
+
+                    <p>
+
+                        Combino desarrollo web,
+                        diseño gráfico y elaboración
+                        de documentos profesionales
+                        para crear resultados modernos,
+                        funcionales y personalizados.
+
+                    </p>
+
+
+                    <div class="about-skills">
+
+                        <div>
+                            <strong>WEB</strong>
+                            <span>Desarrollo</span>
+                        </div>
+
+                        <div>
+                            <strong>DESIGN</strong>
+                            <span>Creatividad</span>
+                        </div>
+
+                        <div>
+                            <strong>WORD</strong>
+                            <span>Documentos</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACTO
+        ================================================== -->
+
+        <section
+            class="section contact-section"
+            id="contacto"
+        >
+
+            <div class="container">
+
+                <div class="contact-box reveal">
+
+                    <div class="contact-glow"></div>
+
+                    <span class="section-number">
+                        05 / CONTACTO
+                    </span>
+
+                    <p class="contact-small">
+                        ¿TIENES UN PROYECTO EN MENTE?
+                    </p>
+
+                    <h2>
+
+                        Hagamos algo
+
+                        <span>
+                            increíble.
+                        </span>
+
+                    </h2>
+
+
+                    <p class="contact-description">
+
+                        Si necesitas una página web,
+                        diseño gráfico o documentos
+                        profesionales, puedes escribirme
+                        directamente por WhatsApp.
+
+                    </p>
+
+
+                    <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="whatsapp-card whatsapp-link"
+                    >
+
+                        <div class="whatsapp-card-logo">
+
+                            <img
+                                src="./img/logo.png"
+                                alt="WhatsApp"
+                            >
+
+                        </div>
+
+
+                        <div>
+
+                            <small>
+                                CONTACTAR POR
+                            </small>
+
+                            <strong>
+                                WhatsApp
+                            </strong>
+
+                        </div>
+
+
+                        <span class="whatsapp-card-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+
+                    <img
+                        src="./img/brayan.png"
+                        alt="THE BRAYAN"
+                        class="brayan-logo"
+                    >
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        THE BRAYAN
+                    </strong>
+
+                    <p>
+                        WEB · DESIGN · DOCUMENTS
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#inicio">
+                    Inicio
+                </a>
+
+                <a href="#servicios">
+                    Servicios
+                </a>
+
+                <a href="#trabajos">
+                    Trabajos
+                </a>
+
+                <a href="#cursos">
+                    Cursos
+                </a>
+
+                <a href="#contacto">
+                    Contacto
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © <span id="year"></span>
+            THE BRAYAN · Todos los derechos reservados.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         WHATSAPP FLOTANTE
+    ====================================================== -->
+
+    <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-float whatsapp-link"
+        aria-label="WhatsApp"
+    >
+
+        <span class="wa-ring wa-ring-1"></span>
+        <span class="wa-ring wa-ring-2"></span>
+
+        <img
+            src="./img/logo.png"
+            alt="WhatsApp"
+            class="whatsapp-logo"
+        >
+
+    </a>
+
+
+    <!-- VOLVER ARRIBA -->
+
+    <button
+        id="backTop"
+        class="back-top"
+        aria-label="Volver arriba"
+    >
+        ↑
+    </button>
+
+
+    <script src="./script.js"></script>
 
 </body>
-
 </html>
-
-
